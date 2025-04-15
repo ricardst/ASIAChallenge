@@ -4,7 +4,7 @@ import lightgbm as lgb
 from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder
-# SimpleImputer is removed as we drop NaNs for now
+from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.multioutput import MultiOutputRegressor
@@ -27,10 +27,32 @@ TEST_FEATURES_FILE = f'{DATA_DIR}test_features.csv'
 SUBMISSION_TEMPLATE_FILE = f'{DATA_DIR}test_outcomes_MS_template.csv'
 SUBMISSION_OUTPUT_FILE = f'{DATA_DIR}submission_baseline_v2_dropna.csv'
 
+# --- NEW: Control Hyperparameter Search ---
+PERFORM_HYPERPARAMETER_SEARCH = False # Set to False to use manual parameters
+
+# --- NEW: Define Manual Parameters (if not tuning) ---
+# These are example parameters, adjust them based on previous runs or defaults
+MANUAL_LGBM_PARAMS = {
+    'n_estimators': 300,
+    'learning_rate': 0.05,
+    'num_leaves': 31,
+    'max_depth': -1,
+    'reg_alpha': 0.1,
+    'reg_lambda': 0.1,
+    'colsample_bytree': 0.8,
+    'subsample': 0.8,
+    'subsample_freq': 1,
+    'random_state': 42,
+    'verbose': -1,
+    # Add device_type='gpu' here if using GPU and manual params
+}
+
 # --- Setup Logging ---
 log_file = 'Metrics.log'
-# Use a specific name for this run configuration
-model_name = "LGBM_MultiOutput_RandomSearch_v3_dropna_rounded"
+# --- ADJUST model_name based on mode ---
+tuning_mode_str = "HPO_Search" if PERFORM_HYPERPARAMETER_SEARCH else "Manual_Params"
+base_model_name = "LGBM_MultiOutput_v5_lgbm_native_nan" # Base name for this script version
+model_name = f"{base_model_name}_{tuning_mode_str}" # Append mode
 run_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 run_id = f"{model_name}_{run_timestamp}"
 
@@ -110,26 +132,37 @@ train_features_w1 = train_features_df[['PID'] + WEEK1_FEATURE_COLS]
 train_merged_df = pd.merge(metadata_df, train_features_w1, on='PID', how='inner')
 train_full_df = pd.merge(train_merged_df, train_outcomes_df, on='PID', how='inner')
 
-# Define features *before* dropping NaNs to ensure consistency
+# Define features before separating X and y
 FEATURES = METADATA_COLS + WEEK1_FEATURE_COLS + ['target_time'] # Add target_time here
-ALL_TRAIN_COLS = METADATA_COLS + WEEK1_FEATURE_COLS + TARGET_COLS + ['time'] # For checking NaNs
 
-# Identify rows with missing values in relevant columns before separating X and y
-cols_to_check_for_nan = list(set(METADATA_COLS + WEEK1_FEATURE_COLS + TARGET_COLS))
-initial_rows = len(train_full_df)
-train_full_df.dropna(subset=cols_to_check_for_nan, inplace=True)
-final_rows = len(train_full_df)
-print(f"Dropped {initial_rows - final_rows} rows with missing values from training data.")
+# Separate features (X) and target (y) RAW
+X_train_raw = train_full_df[METADATA_COLS + WEEK1_FEATURE_COLS].copy()
+y_train_raw = train_full_df[TARGET_COLS].copy()
+time_train_raw = train_full_df['time'].copy()
 
-# Separate features (X) and target (y) AFTER dropping NaNs
-X_train = train_full_df[METADATA_COLS + WEEK1_FEATURE_COLS].copy()
-y_train = train_full_df[TARGET_COLS].copy()
-time_train = train_full_df['time'].copy()
+# --- Drop rows where the TARGET variable itself is NaN ---
+valid_target_indices = y_train_raw.dropna().index
+initial_rows = len(X_train_raw)
+
+# --- Apply valid target indices to X, y, and time ---
+X_train = X_train_raw.loc[valid_target_indices].copy() # Keep original NaNs in features
+y_train = y_train_raw.loc[valid_target_indices].copy()
+time_train = time_train_raw.loc[valid_target_indices].copy()
+final_rows = len(X_train)
+
+if initial_rows != final_rows:
+    print(f"Dropped {initial_rows - final_rows} rows with missing values in TARGET columns.")
+    logger.info(f"Dropped {initial_rows - final_rows} rows with missing values in TARGET columns.")
+else:
+    print("No rows dropped due to missing targets.")
+    logger.info("No rows dropped due to missing targets.")
 
 # Add target time as a feature
 X_train['target_time'] = time_train
 
-print(f"Training data shapes after NaN drop: X_train={X_train.shape}, y_train={y_train.shape}")
+# --- Log data shape *before* any feature imputation/transformation ---
+logger.info(f"Training data shape before preprocessing (target NaNs dropped): X_train={X_train.shape}, y_train={y_train.shape}")
+print(f"Training data shapes input to pipeline: X_train={X_train.shape}, y_train={y_train.shape}")
 
 # --- 4. Prepare Test Data ---
 print("Preparing test data...")
@@ -162,77 +195,57 @@ if X_test.isnull().any().any():
 
 
 # --- 5. Preprocessing Pipeline ---
-print("Setting up preprocessing pipeline (No Imputation)...")
+# --- Update Print statement ---
+print("Setting up preprocessing pipeline (Encoders + Selective Impute, No Scaler)...")
+logger.info("Setting up preprocessing pipeline (Encoders + Selective Impute, No Scaler)...")
 
-# Define feature types based on Data Dictionary and common sense
-# Features ending in 'l'/'r' + number (e.g., elbfll01) or 'ltl'/'ltr'/'ppl'/'ppr' + number are ISNCSCI scores -> numerical
-isnsci_pattern = r'(?:[a-z]{5,6}[lr]|[a-z]{1,5}[lr](?:[0-9]|1[0-2]|[tT][0-9]|t1[0-2]|[sS][1-5]|s45))[0-9]{2}$' # Motor/Sensory pattern
-numerical_features_base = [col for col in X_train.columns if re.match(isnsci_pattern, col)]
+# --- Define feature types explicitly ---
+# Metadata features
+meta_categorical = ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+# Ordinal features from Week 1
+w1_ordinal = ['ais1']
+ais_categories = ['A', 'B', 'C', 'D', 'E']
 
-# Other potential numerical (check dictionary)
-numerical_features_other = ['target_time'] # Treat target_time (26/52) as numerical for scaling
+# --- Identify columns for each transformer ---
+categorical_features = [f for f in meta_categorical if f in X_train.columns]
+ordinal_features = [f for f in w1_ordinal if f in X_train.columns]
 
-# Identify binary/categorical from metadata based on dictionary
-# sexcd: 1 female, 2 male -> needs encoding (treat as categorical)
-# srdecc1, surgcd1, spcsuc1, scdecc1, hemccd1, mhpsyccd, mhneurcd, mhcardcd, mhmetacd: 0 no, 1 yes -> can be treated as numerical (0/1) or categorical. Let's treat as numerical 0/1 for simplicity here.
-binary_like_metadata = ['srdecc1', 'surgcd1', 'spcsuc1', 'scdecc1', 'hemccd1', 'mhpsyccd', 'mhneurcd', 'mhcardcd', 'mhmetacd', 'sexcd']
+# --- ALL OTHER features will be passed through (numerical + binary-like metadata) ---
+processed_cols = set(categorical_features + ordinal_features)
+numerical_passthrough_features = sorted([col for col in X_train.columns if col not in processed_cols])
 
-# Remaining metadata: age_category, bmi_category, tx1_r -> categorical
-categorical_features = ['age_category', 'bmi_category', 'tx1_r'] # Add 'sexcd' here if preferred over treating as 0/1/nan
-
-# Ordinal features
-ordinal_features = ['ais1'] # AIS grade at week 1
-ais_categories = ['A', 'B', 'C', 'D', 'E'] # Define order
-
-# Consolidate numerical features
-numerical_features = list(set(numerical_features_base + numerical_features_other + binary_like_metadata) - set(ordinal_features) - set(categorical_features))
-
-# Ensure all defined features are actually in X_train.columns
-numerical_features = [f for f in numerical_features if f in X_train.columns]
-categorical_features = [f for f in categorical_features if f in X_train.columns]
-ordinal_features = [f for f in ordinal_features if f in X_train.columns]
+print(f"Encoding Categorical Features ({len(categorical_features)}): {categorical_features}")
+print(f"Encoding Ordinal Features ({len(ordinal_features)}): {ordinal_features}")
+print(f"Passing through Numerical Features ({len(numerical_passthrough_features)}): {numerical_passthrough_features[:5]}...")
+logger.info(f"Encoding Categorical Features ({len(categorical_features)}): {categorical_features}")
+logger.info(f"Encoding Ordinal Features ({len(ordinal_features)}): {ordinal_features}")
+logger.info(f"Passing through Numerical Features ({len(numerical_passthrough_features)})")
 
 
-print(f"Num Features ({len(numerical_features)}): {numerical_features[:5]}...")
-print(f"Cat Features ({len(categorical_features)}): {categorical_features}")
-print(f"Ord Features ({len(ordinal_features)}): {ordinal_features}")
-
-
-# Create preprocessing pipelines (NO IMPUTATION)
-numerical_transformer = Pipeline(steps=[
-    ('scaler', StandardScaler())
-])
-
+# --- Define transformers: Impute ONLY immediately before encoding ---
+# Imputer is needed because encoders cannot handle NaN inputs.
 categorical_transformer = Pipeline(steps=[
-    # No Imputer
-    ('onehot', OneHotEncoder(handle_unknown='ignore', sparse_output=False))
+    ('imputer', SimpleImputer(strategy='most_frequent')), # Impute before OHE
+    ('onehot', OneHotEncoder(handle_unknown='ignore', sparse_output=False)) # Using dense for LGBM compatibility if needed, though it handles sparse too. Set back to True if memory is issue.
 ])
 
 ordinal_transformer = Pipeline(steps=[
-    # No Imputer - OrdinalEncoder needs careful thought on NaN handling if it were present
-    ('ordinal', OrdinalEncoder(categories=[ais_categories], # List of lists
-                               handle_unknown='use_encoded_value',
-                               unknown_value=-1)) # Assign -1 to unknowns (if any appear during transform)
-    # Optional: Add scaler *after* ordinal encoding if desired
-    # ('scaler', StandardScaler())
+    ('imputer', SimpleImputer(strategy='most_frequent')), # Impute before Ordinal
+    ('ordinal', OrdinalEncoder(categories=[ais_categories], handle_unknown='use_encoded_value', unknown_value=-1)),
 ])
 
 
-# Use ColumnTransformer
+# --- Define preprocessor ---
+# Apply specific transformers only to categorical/ordinal columns.
+# Pass all other columns (numerical, binary) through without scaling or imputation.
 preprocessor = ColumnTransformer(
     transformers=[
-        ('num', numerical_transformer, numerical_features),
+        # ('num', numerical_transformer, numerical_features), # REMOVED - using remainder='passthrough'
         ('cat', categorical_transformer, categorical_features),
         ('ord', ordinal_transformer, ordinal_features)
         ],
-    remainder='passthrough' # Keep any columns not explicitly handled (should be none ideally)
+    remainder='passthrough' # <<<--- IMPORTANT: Pass numerical features directly to LightGBM
     )
-
-# Check if all features intended for training are covered
-all_processed_features = numerical_features + categorical_features + ordinal_features
-unprocessed = set(X_train.columns) - set(all_processed_features)
-if unprocessed:
-     print(f"Warning: The following features are in X_train but not assigned a transformer: {unprocessed}")
 
 
 # --- 6. Define Model ---
@@ -243,139 +256,125 @@ model = MultiOutputRegressor(lgbm)
 full_pipeline = Pipeline(steps=[('preprocessor', preprocessor),
                                 ('regressor', model)])
 
-# --- 7. Train Model & Cross-Validation --- REMOVED
-"""
-print("Training model and performing cross-validation...")
+# --- Section 7: Train Model (Conditional Tuning) ---
 
-kf = KFold(n_splits=5, shuffle=True, random_state=42)
-cv_scores = []
-oof_predictions = np.zeros(y_train.shape) # Out-of-fold predictions for analysis
-train_indices = X_train.index # Keep track of original indices
+# Define the basic pipeline structure first
+# (Preprocessor definition should be finalized before this point - Section 5)
 
-for fold, (train_idx_local, val_idx_local) in enumerate(kf.split(X_train, y_train)):
-    # Map local fold indices back to original dataframe indices
-    train_idx_orig = train_indices[train_idx_local]
-    val_idx_orig = train_indices[val_idx_local]
+# Note: Define lgbm instance here only if NOT tuning, otherwise defined inside search
+#       Let's define the base pipeline structure without specific params first
 
-    X_train_fold, X_val_fold = X_train.loc[train_idx_orig], X_train.loc[val_idx_orig]
-    y_train_fold, y_val_fold = y_train.loc[train_idx_orig], y_train.loc[val_idx_orig]
-
-    # Clone the pipeline to ensure fresh state for each fold
-    from sklearn import clone
-    
-    fold_pipeline = clone(full_pipeline)
-    fold_pipeline.fit(X_train_fold, y_train_fold)
-    y_pred_fold = fold_pipeline.predict(X_val_fold)
-
-    # Clamp predictions
-    MIN_SCORE = 0
-    MAX_SCORE = 5 # ISNCSCI motor score range
-    y_pred_fold[y_pred_fold < MIN_SCORE] = MIN_SCORE
-    y_pred_fold[y_pred_fold > MAX_SCORE] = MAX_SCORE
-    # Optional: Round predictions to nearest integer
-    y_pred_fold = np.round(y_pred_fold)
-
-    oof_predictions[val_idx_local] = y_pred_fold # Store OOF predictions using local index
-
-    rmse = np.sqrt(mean_squared_error(y_val_fold, y_pred_fold))
-    print(f"Fold {fold+1} RMSE: {rmse:.4f}")
-    cv_scores.append(rmse)
-
-print(f"Average CV RMSE: {np.mean(cv_scores):.4f} +/- {np.std(cv_scores):.4f}")
-
-timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-with open("CV_logs.log", "a") as log_file:
-    model_name = "MultiOutputRegressor(LGBMRegressor)"
-    log_file.write(f"{timestamp} - Model: {model_name}\n")
-    log_file.write(f"{timestamp} - CV Scores: {cv_scores}\n")
-    log_file.write(f"{timestamp} - Average CV RMSE: {np.mean(cv_scores):.4f} +/- {np.std(cv_scores):.4f}\n")
+base_lgbm = lgb.LGBMRegressor(random_state=42, verbose=-1) # Base instance for structure
+base_model = MultiOutputRegressor(base_lgbm)
+base_pipeline = Pipeline(steps=[('preprocessor', preprocessor), # Use preprocessor from Section 5
+                                ('regressor', base_model)])
 
 
-# Train final model on all (non-NaN) training data
-print("Training final model on all cleaned training data...")
-full_pipeline.fit(X_train, y_train)
-print("Final model training complete.")
-"""
-# --- ADD RandomizedSearchCV ---
-print("Setting up RandomizedSearchCV for hyperparameter tuning...")
+if PERFORM_HYPERPARAMETER_SEARCH:
+    print("--- Mode: Performing Hyperparameter Search ---")
+    logger.info("Mode: Performing Hyperparameter Search")
 
-# Define the parameter distribution to sample from
-# Prefix parameters with 'regressor__estimator__' because 'regressor' is the name of the
-# MultiOutputRegressor step in the pipeline, and 'estimator' is the LGBM instance within it.
-param_distributions = {
-    'regressor__estimator__n_estimators': randint(100, 800),
-    'regressor__estimator__learning_rate': uniform(0.01, 0.2),
-    'regressor__estimator__num_leaves': randint(20, 60),
-    'regressor__estimator__max_depth': randint(3, 12), # -1 means no limit, let's set a range
-    'regressor__estimator__reg_alpha': uniform(0.0, 1.0), # L1 regularization
-    'regressor__estimator__reg_lambda': uniform(0.0, 1.0), # L2 regularization
-    'regressor__estimator__colsample_bytree': uniform(0.6, 0.4), # Sample 60% to 100% of features
-    'regressor__estimator__subsample': uniform(0.6, 0.4), # Sample 60% to 100% of data rows (if subsample_freq > 0)
-    'regressor__estimator__subsample_freq': randint(0, 5) # How often to subsample rows (0 = never)
-    # Add other parameters if needed, e.g., boosting_type, min_child_samples etc.
-}
+    # --- RandomizedSearchCV Setup ---
+    # Define the parameter distribution to sample from
+    param_distributions = {
+        'regressor__estimator__n_estimators': randint(100, 800),
+        'regressor__estimator__learning_rate': uniform(0.01, 0.2),
+        'regressor__estimator__num_leaves': randint(20, 60),
+        'regressor__estimator__max_depth': randint(3, 12),
+        'regressor__estimator__reg_alpha': uniform(0.0, 1.0),
+        'regressor__estimator__reg_lambda': uniform(0.0, 1.0),
+        'regressor__estimator__colsample_bytree': uniform(0.6, 0.4),
+        'regressor__estimator__subsample': uniform(0.6, 0.4),
+        'regressor__estimator__subsample_freq': randint(0, 5)
+    }
 
-# Configure the random search
-# Using neg_root_mean_squared_error because RandomizedSearchCV maximizes the score
-n_iterations = 2
-kf = KFold(n_splits=5, shuffle=True, random_state=42) # Reuse the KFold definition
-random_search = RandomizedSearchCV(
-    estimator=full_pipeline,          # The pipeline object
-    param_distributions=param_distributions,
-    n_iter=n_iterations,                       # Number of parameter settings to sample <<< --- ADJUST AS NEEDED (more is better but slower)
-    cv=kf,                           # Cross-validation strategy
-    scoring='neg_root_mean_squared_error', # Lower RMSE is better, so optimize negative RMSE
-    n_jobs=-1,                       # Use all available cores
-    random_state=42,                 # For reproducibility
-    verbose=1                        # Show progress
-    # refit=True is the default, so it automatically refits the best model on the whole training set
-)
+    n_iterations = 50 # <<<--- ADJUST AS NEEDED
+    kf = KFold(n_splits=5, shuffle=True, random_state=42)
+    random_search = RandomizedSearchCV(
+        estimator=base_pipeline, # Use the base pipeline structure
+        param_distributions=param_distributions,
+        n_iter=n_iterations,
+        cv=kf,
+        scoring='neg_root_mean_squared_error',
+        n_jobs=-1, # Use -1 for all cores, adjust if needed
+        random_state=42,
+        verbose=1,
+        refit=True # Default, refits the best estimator on the whole data
+    )
 
-print("Starting hyperparameter search...")
-# --- ADD Logging before search ---
-logger.info(f"Starting RandomizedSearchCV with n_iter={n_iterations}")
+    print("Starting hyperparameter search...")
+    logger.info(f"Starting RandomizedSearchCV with n_iter={n_iterations}")
+    random_search.fit(X_train, y_train)
 
-random_search.fit(X_train, y_train)
+    print("\nHyperparameter search complete.")
+    logger.info("Hyperparameter search complete.")
 
-print("\nHyperparameter search complete.")
-print(f"Best parameters found: {random_search.best_params_}")
-best_rmse = -random_search.best_score_
-print(f"Best cross-validation RMSE: {best_rmse:.4f}")
+    best_params_loggable = {k: (int(v) if isinstance(v, np.integer) else
+                                float(v) if isinstance(v, np.floating) else
+                                v)
+                           for k, v in random_search.best_params_.items()}
+    best_rmse = -random_search.best_score_
 
-random_search.fit(X_train, y_train)
+    print(f"Best parameters found: {best_params_loggable}")
+    print(f"Best cross-validation RMSE: {best_rmse:.4f}")
+    logger.info(f"Best CV RMSE: {best_rmse:.4f}")
+    logger.info(f"Best parameters: {best_params_loggable}")
 
-print("\nHyperparameter search complete.")
-print(f"Best parameters found: {random_search.best_params_}")
-# Score is negative RMSE, so negate it to get positive RMSE
-best_rmse = -random_search.best_score_
-print(f"Best cross-validation RMSE: {best_rmse:.4f}")
+    # The final pipeline IS the best estimator found by the search
+    final_pipeline_to_use = random_search.best_estimator_
 
-# --- ADD Logging after search ---
-logger.info(f"Hyperparameter search complete.")
-logger.info(f"Best CV RMSE: {best_rmse:.4f}")
-# Convert numpy types in best_params_ to standard python types for cleaner logging if necessary
-best_params_loggable = {k: (int(v) if isinstance(v, np.integer) else
-                            float(v) if isinstance(v, np.floating) else
-                            v)
-                       for k, v in random_search.best_params_.items()}
-logger.info(f"Best parameters: {best_params_loggable}")
 
-# The best estimator found during the search, already refitted on the full training data
-best_pipeline = random_search.best_estimator_
+else: # Use Manual Parameters
+    print("--- Mode: Using Manual Hyperparameters ---")
+    logger.info("Mode: Using Manual Hyperparameters")
+    logger.info(f"Manual LGBM Params: {MANUAL_LGBM_PARAMS}")
+
+    # Create pipeline with specific manual parameters
+    manual_lgbm = lgb.LGBMRegressor(**MANUAL_LGBM_PARAMS)
+    manual_model = MultiOutputRegressor(manual_lgbm)
+    manual_pipeline = Pipeline(steps=[('preprocessor', preprocessor), # Use preprocessor from Section 5
+                                      ('regressor', manual_model)])
+
+    # Optionally, perform CV on the manual pipeline to estimate performance
+    print("Performing cross-validation on manual parameters...")
+    logger.info("Performing cross-validation on manual parameters...")
+    from sklearn.model_selection import cross_val_score
+    kf = KFold(n_splits=5, shuffle=True, random_state=42)
+    cv_scores_neg_rmse = cross_val_score(
+        manual_pipeline,
+        X_train, y_train,
+        cv=kf,
+        scoring='neg_root_mean_squared_error',
+        n_jobs=-1 # Use -1 for all cores, adjust if needed
+    )
+    cv_rmse_scores = -cv_scores_neg_rmse
+    mean_cv_rmse = np.mean(cv_rmse_scores)
+    std_cv_rmse = np.std(cv_rmse_scores)
+    print(f"Cross-validation RMSE with manual parameters: {mean_cv_rmse:.4f} +/- {std_cv_rmse:.4f}")
+    logger.info(f"CV RMSE with manual parameters: {mean_cv_rmse:.4f} +/- {std_cv_rmse:.4f}")
+
+    # Train the final model on all training data
+    print("Training final model with manual parameters...")
+    logger.info("Training final model with manual parameters...")
+    manual_pipeline.fit(X_train, y_train)
+    print("Final model training complete.")
+    logger.info("Final model training complete.")
+
+    # The final pipeline IS the manually configured one
+    final_pipeline_to_use = manual_pipeline
 
 # --- 8. Make Predictions ---
-print("Making predictions on test data using the best found pipeline...")
+# --- Use the selected pipeline (either from HPO search or manual fit) ---
+print("Making predictions on test data using the final pipeline...")
 try:
-    # Use the best estimator found by RandomizedSearchCV
-    predictions = best_pipeline.predict(X_test) # <<< --- CHANGE: Use best_pipeline
+    predictions = final_pipeline_to_use.predict(X_test) # <<<--- Use common variable
 
     # Post-process predictions (clamping/rounding)
     MIN_SCORE = 0
     MAX_SCORE = 5 # ISNCSCI motor score range
     predictions[predictions < MIN_SCORE] = MIN_SCORE
     predictions[predictions > MAX_SCORE] = MAX_SCORE
-    # Round predictions to nearest integer
-    predictions = np.round(predictions)
+    predictions = np.round(predictions) # Round predictions
 
     print("Predictions generated.")
 
@@ -429,10 +428,11 @@ print(f"Submission file saved to '{SUBMISSION_OUTPUT_FILE}'")
 logger.info(f"--- Finished Run: {run_id} ---")
 print(f"\nRun details and metrics logged to {log_file}")
 
-print("\nPipeline V2 (drop NaN, Ordinal AIS) finished.")
+# --- UPDATE final print statement and next steps ---
+print("\nPipeline V5 (LGBM Native NaN, Ordinal/Cat Encode) finished.")
 print("Next steps:")
-print("1. Analyze the CV results. Check OOF predictions if needed.")
-print("2. Re-introduce imputation (e.g., SimpleImputer) into the preprocessing pipeline to handle potential NaNs in the test set robustly.")
-print("3. Experiment with different imputation strategies.")
-print("4. Try different models (RandomForest, XGBoost) or tune LightGBM hyperparameters.")
-print("5. Engineer more features from Week 1 data + metadata.")
+print("1. Analyze the CV results from RandomizedSearchCV.")
+print("2. Compare performance to the previous version with full imputation/scaling.")
+print("3. Experiment with LightGBM's direct categorical feature handling (requires removing encoders and passing feature names/indices to LGBM).")
+print("4. Try other models or further tune hyperparameters.")
+print("5. Engineer more features.")

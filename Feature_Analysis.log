@@ -1,0 +1,87 @@
+2025-04-10 15:09:44 - Mutual_Information_2025-04-10_15-09-44 - INFO - --- Starting Mutual Information Analysis: Mutual_Information_2025-04-10_15-09-44 ---
+2025-04-10 15:09:44 - Mutual_Information_2025-04-10_15-09-44 - INFO - Loading data...
+2025-04-10 15:09:44 - Mutual_Information_2025-04-10_15-09-44 - INFO - Data loaded.
+2025-04-10 15:09:44 - Mutual_Information_2025-04-10_15-09-44 - INFO - Preparing data...
+2025-04-10 15:09:44 - Mutual_Information_2025-04-10_15-09-44 - INFO - Data prepared for preprocessing: X_train=(544, 149), y_train=(544, 20)
+2025-04-10 15:09:44 - Mutual_Information_2025-04-10_15-09-44 - INFO - Defining and applying preprocessing...
+2025-04-10 15:09:44 - Mutual_Information_2025-04-10_15-09-44 - INFO - Preprocessing applied. Processed feature shape: (544, 154)
+2025-04-10 15:09:44 - Mutual_Information_2025-04-10_15-09-44 - INFO - Calculating Mutual Information for each target variable...
+2025-04-10 15:10:06 - Mutual_Information_2025-04-10_15-10-06 - INFO - --- Starting Mutual Information Analysis: Mutual_Information_2025-04-10_15-10-06 ---
+2025-04-10 15:10:06 - Mutual_Information_2025-04-10_15-10-06 - INFO - Loading data...
+2025-04-10 15:10:06 - Mutual_Information_2025-04-10_15-10-06 - INFO - Data loaded.
+2025-04-10 15:10:06 - Mutual_Information_2025-04-10_15-10-06 - INFO - Preparing data...
+2025-04-10 15:10:06 - Mutual_Information_2025-04-10_15-10-06 - INFO - Data prepared for preprocessing: X_train=(544, 149), y_train=(544, 20)
+2025-04-10 15:10:06 - Mutual_Information_2025-04-10_15-10-06 - INFO - Defining and applying preprocessing...
+2025-04-10 15:10:06 - Mutual_Information_2025-04-10_15-10-06 - INFO - Preprocessing applied. Processed feature shape: (544, 154)
+2025-04-10 15:10:06 - Mutual_Information_2025-04-10_15-10-06 - INFO - Calculating Mutual Information for each target variable...
+2025-04-10 15:13:08 - Mutual_Information_2025-04-10_15-13-08 - INFO - --- Starting Mutual Information Analysis: Mutual_Information_2025-04-10_15-13-08 ---
+2025-04-10 15:13:08 - Mutual_Information_2025-04-10_15-13-08 - INFO - Loading data...
+2025-04-10 15:13:08 - Mutual_Information_2025-04-10_15-13-08 - INFO - Data loaded.
+2025-04-10 15:13:08 - Mutual_Information_2025-04-10_15-13-08 - INFO - Preparing data...
+2025-04-10 15:13:08 - Mutual_Information_2025-04-10_15-13-08 - INFO - Data prepared for preprocessing: X_train=(544, 149), y_train=(544, 20)
+2025-04-10 15:13:08 - Mutual_Information_2025-04-10_15-13-08 - INFO - Defining and applying preprocessing...
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - INFO - --- Starting Mutual Information Analysis: Mutual_Information_2025-04-10_15-14-43 ---
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - INFO - Loading data...
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - INFO - Data loaded.
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - INFO - Preparing data...
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - INFO - Data prepared for preprocessing: X_train=(544, 149), y_train=(544, 20)
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - INFO - Defining and applying preprocessing...
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - INFO - Checking for zero variance or all-NaN columns before preprocessing...
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - INFO - Final feature counts for preprocessing: Numerical=31, Categorical=3, Ordinal=1
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - INFO - Checking for NaNs/Infs after preprocessing...
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - ERROR - NaNs or Infs found in X_processed AFTER preprocessing and column removal!
+2025-04-10 15:14:43 - Mutual_Information_2025-04-10_15-14-43 - ERROR - Problematic transformed columns: ['remainder__c2ltl01' 'remainder__c3ltl01' 'remainder__c4ltl01'
+ 'remainder__c5ltl01' 'remainder__c6ltl01' 'remainder__c7ltl01'
+ 'remainder__c8ltl01' 'remainder__t1ltl01' 'remainder__t2ltl01'
+ 'remainder__t3ltl01' 'remainder__t4ltl01' 'remainder__t5ltl01'
+ 'remainder__t6ltl01' 'remainder__t7ltl01' 'remainder__t8ltl01'
+ 'remainder__t9ltl01' 'remainder__t10ltl01' 'remainder__t11ltl01'
+ 'remainder__t12ltl01' 'remainder__l1ltl01' 'remainder__l2ltl01'
+ 'remainder__l3ltl01' 'remainder__l4ltl01' 'remainder__l5ltl01'
+ 'remainder__s1ltl01' 'remainder__s2ltl01' 'remainder__s3ltl01'
+ 'remainder__s45ltl01' 'remainder__c2ltr01' 'remainder__c3ltr01'
+ 'remainder__c4ltr01' 'remainder__c5ltr01' 'remainder__c6ltr01'
+ 'remainder__c7ltr01' 'remainder__c8ltr01' 'remainder__t1ltr01'
+ 'remainder__t2ltr01' 'remainder__t3ltr01' 'remainder__t4ltr01'
+ 'remainder__t5ltr01' 'remainder__t6ltr01' 'remainder__t7ltr01'
+ 'remainder__t8ltr01' 'remainder__t9ltr01' 'remainder__t10ltr01'
+ 'remainder__t11ltr01' 'remainder__t12ltr01' 'remainder__l1ltr01'
+ 'remainder__l2ltr01' 'remainder__l3ltr01' 'remainder__l4ltr01'
+ 'remainder__l5ltr01' 'remainder__s1ltr01' 'remainder__s2ltr01'
+ 'remainder__s3ltr01' 'remainder__s45ltr01' 'remainder__c2ppl01'
+ 'remainder__c3ppl01' 'remainder__c4ppl01' 'remainder__c5ppl01'
+ 'remainder__c6ppl01' 'remainder__c7ppl01' 'remainder__c8ppl01'
+ 'remainder__t1ppl01' 'remainder__t2ppl01' 'remainder__t3ppl01'
+ 'remainder__t4ppl01' 'remainder__t5ppl01' 'remainder__t6ppl01'
+ 'remainder__t7ppl01' 'remainder__t8ppl01' 'remainder__t9ppl01'
+ 'remainder__t10ppl01' 'remainder__t11ppl01' 'remainder__t12ppl01'
+ 'remainder__l1ppl01' 'remainder__l2ppl01' 'remainder__l3ppl01'
+ 'remainder__l4ppl01' 'remainder__l5ppl01' 'remainder__s1ppl01'
+ 'remainder__s2ppl01' 'remainder__s3ppl01' 'remainder__s45ppl01'
+ 'remainder__c2ppr01' 'remainder__c3ppr01' 'remainder__c4ppr01'
+ 'remainder__c5ppr01' 'remainder__c6ppr01' 'remainder__c7ppr01'
+ 'remainder__c8ppr01' 'remainder__t1ppr01' 'remainder__t2ppr01'
+ 'remainder__t3ppr01' 'remainder__t4ppr01' 'remainder__t5ppr01'
+ 'remainder__t6ppr01' 'remainder__t7ppr01' 'remainder__t8ppr01'
+ 'remainder__t9ppr01' 'remainder__t10ppr01' 'remainder__t11ppr01'
+ 'remainder__t12ppr01' 'remainder__l1ppr01' 'remainder__l2ppr01'
+ 'remainder__l3ppr01' 'remainder__l4ppr01' 'remainder__l5ppr01'
+ 'remainder__s1ppr01' 'remainder__s2ppr01' 'remainder__s3ppr01'
+ 'remainder__s45ppr01' 'remainder__vaccd01' 'remainder__anyana01']
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - --- Starting Mutual Information Analysis: Mutual_Information_2025-04-10_15-18-07 ---
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Loading data...
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Data loaded.
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Preparing data...
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Data prepared for preprocessing: X_train=(544, 149), y_train=(544, 20)
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Defining and applying preprocessing...
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Checking for zero variance or all-NaN columns before preprocessing...
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Final feature counts for preprocessing: Numerical=31, Categorical=3, Ordinal=1
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Checking for NaNs/Infs after preprocessing...
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Preprocessing successful. No NaNs/Infs detected in final features.
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Preprocessing applied. Processed feature shape: (544, 40)
+2025-04-10 15:18:07 - Mutual_Information_2025-04-10_15-18-07 - INFO - Calculating Mutual Information for each target variable...
+2025-04-10 15:18:10 - Mutual_Information_2025-04-10_15-18-07 - INFO - MI calculation complete.
+2025-04-10 15:18:10 - Mutual_Information_2025-04-10_15-18-07 - INFO - Aggregating and ranking features by MI...
+2025-04-10 15:18:10 - Mutual_Information_2025-04-10_15-18-07 - INFO - Ranked MI list saved to: mutual_information_ranking_2025-04-10_15-18-07.csv
+2025-04-10 15:18:10 - Mutual_Information_2025-04-10_15-18-07 - INFO - Top 5 features: ['num__elbexr01', 'num__elbexl01', 'num__finabr01', 'num__finflr01', 'num__wrextr01']
+2025-04-10 15:18:10 - Mutual_Information_2025-04-10_15-18-07 - INFO - --- Finished Mutual Information Analysis: Mutual_Information_2025-04-10_15-18-07 ---
