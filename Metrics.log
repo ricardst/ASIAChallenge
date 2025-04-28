@@ -144,3 +144,354 @@
 2025-04-15 17:06:55 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_15-15-05 - INFO - Best CV RMSE: 1.1287
 2025-04-15 17:06:55 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_15-15-05 - INFO - Best parameters: {'regressor__estimator__depth': 4, 'regressor__estimator__iterations': 198, 'regressor__estimator__l2_leaf_reg': 10.736638367553173, 'regressor__estimator__learning_rate': 0.06678419494749314, 'regressor__estimator__subsample': 0.7221455441377573}
 2025-04-15 17:06:55 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_15-15-05 - INFO - --- Finished Run: CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_15-15-05 ---
+2025-04-15 18:14:29 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - --- Starting Run: CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 ---
+2025-04-15 18:14:29 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Selected Model Type: CatBoost
+2025-04-15 18:14:29 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Hyperparameter Search Enabled: True
+2025-04-15 18:14:29 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Data Directory: ./
+2025-04-15 18:14:29 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Output Submission File: ./submission_CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29.csv
+2025-04-15 18:14:29 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Training data shape before preprocessing (target NaNs dropped): X_train=(544, 149), y_train=(544, 20)
+2025-04-15 18:14:29 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Test data shape: X_test=(122, 149)
+2025-04-15 18:14:29 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Setting up preprocessing pipeline (Encoders + Selective Impute, No Scaler)...
+2025-04-15 18:14:29 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Mode: Performing Hyperparameter Search for CatBoost
+2025-04-15 18:14:29 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Starting RandomizedSearchCV with n_iter=10
+2025-04-15 18:22:01 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Hyperparameter search complete.
+2025-04-15 18:22:01 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Best CV RMSE: 1.1257
+2025-04-15 18:22:01 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - Best parameters: {'regressor__estimator__depth': 2, 'regressor__estimator__iterations': 746, 'regressor__estimator__l2_leaf_reg': 18.052412368729154, 'regressor__estimator__learning_rate': 0.023010318597055907, 'regressor__estimator__subsample': 0.9642198760773333}
+2025-04-15 18:22:02 - CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 - INFO - --- Finished Run: CatBoost_MultiOutput_v5_native_nan_HPO_Search_2025-04-15_18-14-29 ---
+2025-04-16 12:25:13 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - --- Starting Run: TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 ---
+2025-04-16 12:25:13 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Selected Model Type: TabPFN
+2025-04-16 12:25:13 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Cross-Validation Enabled: True (5 folds)
+2025-04-16 12:25:13 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - TabPFN Parameters: {'random_state': 42, 'device': 'cuda'}
+2025-04-16 12:25:13 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Data Directory: ./
+2025-04-16 12:25:13 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13.csv
+2025-04-16 12:25:13 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Training data shape before preprocessing (target NaNs dropped): X_train=(544, 149), y_train=(544, 20)
+2025-04-16 12:25:13 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Test data shape: X_test=(122, 149)
+2025-04-16 12:25:13 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Setting up preprocessing pipeline (Encoders + Selective Impute, No Scaler)...
+2025-04-16 12:25:13 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Performing 5-fold cross-validation...
+2025-04-16 12:30:23 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - 5-Fold CV RMSE: 1.1565 +/- 0.0603
+2025-04-16 12:30:23 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Training final model on all training data...
+2025-04-16 12:31:03 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Final model training complete. Time: 0:00:39.552761
+2025-04-16 12:31:45 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - Submission file saved to './submission_TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13.csv'
+2025-04-16 12:31:45 - TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 - INFO - --- Finished Run: TabPFN_MultiOutput_v5_native_nan_5FoldCV_2025-04-16_12-25-13 ---
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - --- Starting Run: TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 ---
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - Selected Model Type: TabPFN
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - Cross-Validation Enabled: False (5 folds)
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - TabPFN Parameters: {'random_state': 42, 'device': 'cuda'}
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - Data Directory: ./
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11.csv
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - Training data shape before preprocessing (target NaNs dropped): X_train=(544, 149), y_train=(544, 20)
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - Test data shape: X_test=(122, 149)
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - Setting up preprocessing pipeline (Encoders + Selective Impute, No Scaler)...
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - Using AutoTabPFNRegressor with max_time=1800s
+2025-04-16 13:17:11 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_13-17-11 - INFO - Training final model on all training data...
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - --- Starting Run: TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 ---
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Selected Model Type: TabPFN
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Cross-Validation Enabled: False (5 folds)
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - TabPFN Parameters: {'random_state': 42, 'device': 'cuda'}
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Data Directory: ./
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02.csv
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Training data shape before preprocessing (target NaNs dropped): X_train=(544, 149), y_train=(544, 20)
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Test data shape: X_test=(122, 149)
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Setting up preprocessing pipeline (Encoders + Selective Impute, No Scaler)...
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Using AutoTabPFNRegressor with max_time=300s
+2025-04-16 18:41:02 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Training final model on all training data...
+2025-04-16 20:23:12 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Final model training complete. Time: 1:42:09.452542
+2025-04-16 21:17:30 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - Submission file saved to './submission_TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02.csv'
+2025-04-16 21:17:30 - TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 - INFO - --- Finished Run: TabPFN_MultiOutput_v5_native_nan_NoCV_2025-04-16_18-41-02 ---
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - --- Starting Run: TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 ---
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Selected Model Type: TabPFN
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Cross-Validation Enabled: False
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Base TabPFN Parameters: {'random_state': 42, 'device': 'cuda'}
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Data Directory: ./
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44.csv
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Performing Feature Engineering...
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Engineered features created. New shape: (675, 171)
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - No rows dropped due to missing targets
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Final training data shapes (post FE, target NaNs dropped): X_train=(544, 171), y_train=(544, 20)
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Engineered features created. New shape: (122, 171)
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Test data shape (post FE): X_test=(122, 170)
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Setting up preprocessing pipeline (Encoders + Selective Impute, No Scaler)...
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Encoding Categorical Features (4): ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Encoding Ordinal Features (1): ['ais1']
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Passing through Numerical Features (165)
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Using AutoTabPFNRegressor with max_time=3600s
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - Mode: Training 5 models for averaging
+2025-04-17 10:41:44 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-41-44 - INFO - --- Starting Averaging Run 1/5 (Seed: 42) ---
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - --- Starting Run: TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 ---
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Selected Model Type: TabPFN
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Cross-Validation Enabled: False
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Base TabPFN Parameters: {'random_state': 42, 'device': 'cuda'}
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Data Directory: ./
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46.csv
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Performing Feature Engineering...
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Engineered features created. New shape: (675, 171)
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - No rows dropped due to missing targets
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Final training data shapes (post FE, target NaNs dropped): X_train=(544, 171), y_train=(544, 20)
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Engineered features created. New shape: (122, 171)
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Test data shape (post FE): X_test=(122, 170)
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Setting up preprocessing pipeline (Encoders + Selective Impute, No Scaler)...
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Encoding Categorical Features (4): ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Encoding Ordinal Features (1): ['ais1']
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Passing through Numerical Features (165)
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Using AutoTabPFNRegressor with max_time=3600s
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - Mode: Training 5 models for averaging
+2025-04-17 10:42:46 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_10-42-46 - INFO - --- Starting Averaging Run 1/5 (Seed: 42) ---
+2025-04-17 12:52:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - --- Starting Run: TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 ---
+2025-04-17 12:52:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Selected Model Type: TabPFN
+2025-04-17 12:52:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-17 12:52:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Cross-Validation Enabled: False
+2025-04-17 12:52:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Base TabPFN Parameters: {'random_state': 42, 'device': 'cuda'}
+2025-04-17 12:52:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Data Directory: ./
+2025-04-17 12:52:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42.csv
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Performing Feature Engineering...
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Engineered features created. New shape: (675, 171)
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - No rows dropped due to missing targets
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Final training data shapes (post FE, target NaNs dropped): X_train=(544, 171), y_train=(544, 20)
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Engineered features created. New shape: (122, 171)
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Test data shape (post FE): X_test=(122, 170)
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Setting up preprocessing pipeline (Encoders + Selective Impute, No Scaler)...
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Encoding Categorical Features (4): ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Encoding Ordinal Features (1): ['ais1']
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Passing through Numerical Features (165)
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Using AutoTabPFNRegressor with max_time=300s
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Mode: Training 5 models for averaging
+2025-04-17 12:52:43 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - --- Starting Averaging Run 1/5 (Seed: 42) ---
+2025-04-17 14:33:47 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Training complete for run 1. Time: 1:41:04.606485
+2025-04-17 14:33:47 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - ERROR - ERROR during run 1 (Seed: 42): columns are missing: {'target_time'}
+Traceback (most recent call last):
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/TabPFN_MS.py", line 368, in <module>
+    current_predictions = current_pipeline.predict(X_test)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/pipeline.py", line 600, in predict
+    Xt = transform.transform(Xt)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 1065, in transform
+    raise ValueError(f"columns are missing: {diff}")
+ValueError: columns are missing: {'target_time'}
+2025-04-17 14:33:47 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - --- Starting Averaging Run 2/5 (Seed: 43) ---
+2025-04-17 16:15:34 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Training complete for run 2. Time: 1:41:46.898815
+2025-04-17 16:15:34 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - ERROR - ERROR during run 2 (Seed: 43): columns are missing: {'target_time'}
+Traceback (most recent call last):
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/TabPFN_MS.py", line 368, in <module>
+    current_predictions = current_pipeline.predict(X_test)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/pipeline.py", line 600, in predict
+    Xt = transform.transform(Xt)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 1065, in transform
+    raise ValueError(f"columns are missing: {diff}")
+ValueError: columns are missing: {'target_time'}
+2025-04-17 16:15:34 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - --- Starting Averaging Run 3/5 (Seed: 44) ---
+2025-04-17 17:56:28 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Training complete for run 3. Time: 1:40:53.218656
+2025-04-17 17:56:28 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - ERROR - ERROR during run 3 (Seed: 44): columns are missing: {'target_time'}
+Traceback (most recent call last):
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/TabPFN_MS.py", line 368, in <module>
+    current_predictions = current_pipeline.predict(X_test)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/pipeline.py", line 600, in predict
+    Xt = transform.transform(Xt)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 1065, in transform
+    raise ValueError(f"columns are missing: {diff}")
+ValueError: columns are missing: {'target_time'}
+2025-04-17 17:56:28 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - --- Starting Averaging Run 4/5 (Seed: 45) ---
+2025-04-17 19:37:30 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Training complete for run 4. Time: 1:41:01.462503
+2025-04-17 19:37:30 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - ERROR - ERROR during run 4 (Seed: 45): columns are missing: {'target_time'}
+Traceback (most recent call last):
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/TabPFN_MS.py", line 368, in <module>
+    current_predictions = current_pipeline.predict(X_test)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/pipeline.py", line 600, in predict
+    Xt = transform.transform(Xt)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 1065, in transform
+    raise ValueError(f"columns are missing: {diff}")
+ValueError: columns are missing: {'target_time'}
+2025-04-17 19:37:30 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - --- Starting Averaging Run 5/5 (Seed: 46) ---
+2025-04-17 21:18:48 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - INFO - Training complete for run 5. Time: 1:41:17.566575
+2025-04-17 21:18:48 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - ERROR - ERROR during run 5 (Seed: 46): columns are missing: {'target_time'}
+Traceback (most recent call last):
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/TabPFN_MS.py", line 368, in <module>
+    current_predictions = current_pipeline.predict(X_test)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/pipeline.py", line 600, in predict
+    Xt = transform.transform(Xt)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/compose/_column_transformer.py", line 1065, in transform
+    raise ValueError(f"columns are missing: {diff}")
+ValueError: columns are missing: {'target_time'}
+2025-04-17 21:18:48 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_12-52-42 - ERROR - No predictions generated from averaging runs.
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - --- Starting Run: TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 ---
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Selected Model Type: TabPFN
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Cross-Validation Enabled: False
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Base TabPFN Parameters: {'random_state': 42, 'device': 'cuda'}
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Data Directory: ./
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25.csv
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Performing Feature Engineering...
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Engineered features created. New shape: (675, 171)
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - No rows dropped due to missing targets
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Final training data shapes (post FE, target NaNs dropped): X_train=(544, 171), y_train=(544, 20)
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Engineered features created. New shape: (122, 171)
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Test data shape (post FE): X_test=(122, 170)
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Setting up preprocessing pipeline (Encoders + Explicit Passthrough, No Scaler)...
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Encoding Categorical Features (4): ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Encoding Ordinal Features (1): ['ais1']
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - INFO - Passing through Numerical Features (165)
+2025-04-17 21:32:25 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-25 - ERROR - Columns in X_train not assigned to any transformer: {'target_time'}
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - --- Starting Run: TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 ---
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Selected Model Type: TabPFN
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Cross-Validation Enabled: False
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Base TabPFN Parameters: {'random_state': 42, 'device': 'cuda'}
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Data Directory: ./
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50.csv
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Performing Feature Engineering...
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Engineered features created. New shape: (675, 171)
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - No rows dropped due to missing targets
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Final training data shapes (post FE, target NaNs dropped): X_train=(544, 171), y_train=(544, 20)
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Engineered features created. New shape: (122, 171)
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Test data shape (post FE): X_test=(122, 170)
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Setting up preprocessing pipeline (Encoders + Explicit Passthrough, No Scaler)...
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Encoding Categorical Features (4): ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Encoding Ordinal Features (1): ['ais1']
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - INFO - Passing through Numerical Features (165)
+2025-04-17 21:32:50 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-32-50 - ERROR - Columns in X_train not assigned to any transformer: {'target_time'}
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - --- Starting Run: TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 ---
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Selected Model Type: TabPFN
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Cross-Validation Enabled: False
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Base TabPFN Parameters: {'device': 'cuda', 'N_ensemble_configurations': 32}
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Data Directory: ./
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42.csv
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Performing Feature Engineering...
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Engineered features created. New shape: (675, 171)
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - No rows dropped due to missing targets
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Final training data shapes (post FE, target NaNs dropped): X_train=(544, 171), y_train=(544, 20)
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Final FEATURES list includes 171 columns.
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Engineered features created. New shape: (122, 171)
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Test data shape (post FE, aligned): X_test=(122, 171)
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Setting up preprocessing pipeline (Encoders + Explicit Passthrough, No Scaler)...
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Column assignment verification successful.
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Encoding Categorical Features (4): ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Encoding Ordinal Features (1): ['ais1']
+2025-04-17 21:36:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-36-42 - INFO - Passing through Numerical Features (166)
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - --- Starting Run: TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 ---
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Selected Model Type: TabPFN
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Cross-Validation Enabled: False
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Base TabPFN Parameters: {'device': 'cuda'}
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Data Directory: ./
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13.csv
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Performing Feature Engineering...
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Engineered features created. New shape: (675, 171)
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - No rows dropped due to missing targets
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Final training data shapes (post FE, target NaNs dropped): X_train=(544, 171), y_train=(544, 20)
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Final FEATURES list includes 171 columns.
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Engineered features created. New shape: (122, 171)
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Test data shape (post FE, aligned): X_test=(122, 171)
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Setting up preprocessing pipeline (Encoders + Explicit Passthrough, No Scaler)...
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Column assignment verification successful.
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Encoding Categorical Features (4): ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Encoding Ordinal Features (1): ['ais1']
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Passing through Numerical Features (166)
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Mode: Training 5 models for averaging
+2025-04-17 21:38:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - --- Starting Averaging Run 1/5 (Seed: 42) ---
+2025-04-17 21:38:52 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Training complete for run 1. Time: 0:00:38.525357
+2025-04-17 21:39:39 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - --- Starting Averaging Run 2/5 (Seed: 43) ---
+2025-04-17 21:40:19 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Training complete for run 2. Time: 0:00:39.543708
+2025-04-17 21:41:04 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - --- Starting Averaging Run 3/5 (Seed: 44) ---
+2025-04-17 21:41:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Training complete for run 3. Time: 0:00:37.495594
+2025-04-17 21:42:27 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - --- Starting Averaging Run 4/5 (Seed: 45) ---
+2025-04-17 21:43:05 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Training complete for run 4. Time: 0:00:38.404289
+2025-04-17 21:43:51 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - --- Starting Averaging Run 5/5 (Seed: 46) ---
+2025-04-17 21:44:28 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Training complete for run 5. Time: 0:00:37.044733
+2025-04-17 21:45:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Averaged predictions from 5 successful runs.
+2025-04-17 21:45:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Final predictions clamped and rounded.
+2025-04-17 21:45:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - Submission file saved to './submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13.csv'
+2025-04-17 21:45:13 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 - INFO - --- Finished Run: TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13 ---
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - --- Starting Run: TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 ---
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Selected Model Type: TabPFN
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Cross-Validation Enabled: False
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Base TabPFN Parameters: {'device': 'cuda'}
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Data Directory: ./
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15.csv
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Performing Feature Engineering...
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Engineered features created. New shape: (675, 171)
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - No rows dropped due to missing targets
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Final training data shapes (post FE, target NaNs dropped): X_train=(544, 171), y_train=(544, 20)
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Final FEATURES list includes 171 columns.
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Engineered features created. New shape: (122, 171)
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Test data shape (post FE, aligned): X_test=(122, 171)
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Setting up preprocessing pipeline (Encoders + Explicit Passthrough, No Scaler)...
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Column assignment verification successful.
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Encoding Categorical Features (4): ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Encoding Ordinal Features (1): ['ais1']
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Passing through Numerical Features (166)
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Mode: Training 5 models for averaging
+2025-04-17 23:12:15 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - --- Starting Averaging Run 1/5 (Seed: 42) ---
+2025-04-17 23:12:51 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Training complete for run 1. Time: 0:00:36.140960
+2025-04-17 23:13:42 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - --- Starting Averaging Run 2/5 (Seed: 43) ---
+2025-04-17 23:14:20 - TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_23-12-15 - INFO - Training complete for run 2. Time: 0:00:37.477943
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - --- Starting Run: TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 ---
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Selected Model Type: TabPFN
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Manual Averaging Enabled: False (Runs: 1)
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Cross-Validation Enabled: True
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Base TabPFN Parameters: {'device': 'cuda'}
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Data Directory: ./
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03.csv
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Performing Feature Engineering...
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Engineered features created. New shape: (675, 171)
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - No rows dropped due to missing targets
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Final training data shapes (post FE, target NaNs dropped): X_train=(544, 171), y_train=(544, 20)
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Final FEATURES list includes 171 columns.
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Engineered features created. New shape: (122, 171)
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Test data shape (post FE, aligned): X_test=(122, 171)
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Setting up preprocessing pipeline (Encoders + Explicit Passthrough, No Scaler)...
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Column assignment verification successful.
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Encoding Categorical Features (4): ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Encoding Ordinal Features (1): ['ais1']
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Passing through Numerical Features (166)
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Mode: Training single model
+2025-04-17 23:44:03 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Performing 5-fold cross-validation...
+2025-04-17 23:50:00 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - 5-Fold CV RMSE: 1.1614 +/- 0.0621
+2025-04-17 23:50:00 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Training final model...
+2025-04-17 23:50:39 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Final model training complete. Time: 0:00:39.376975
+2025-04-17 23:51:30 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Predictions generated for single run.
+2025-04-17 23:51:30 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Final predictions clamped and rounded.
+2025-04-17 23:51:30 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - Submission file saved to './submission_TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03.csv'
+2025-04-17 23:51:30 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 - INFO - --- Finished Run: TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-17_23-44-03 ---
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - --- Starting Run: TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 ---
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Selected Model Type: TabPFN
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Manual Averaging Enabled: False (Runs: 1)
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Cross-Validation Enabled: True
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Base TabPFN Parameters: {'device': 'cuda'}
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Data Directory: ./
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Output Submission File: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45.csv
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Performing Feature Engineering...
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Engineered features created. New shape: (675, 171)
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - No rows dropped due to missing targets
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Final training data shapes (post FE, target NaNs dropped): X_train=(544, 171), y_train=(544, 20)
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Final FEATURES list includes 171 columns.
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Engineered features created. New shape: (122, 171)
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Test data shape (post FE, aligned): X_test=(122, 171)
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Setting up preprocessing pipeline (Encoders + Explicit Passthrough, No Scaler)...
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Column assignment verification successful.
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Encoding Categorical Features (4): ['age_category', 'bmi_category', 'tx1_r', 'sexcd']
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Encoding Ordinal Features (1): ['ais1']
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Passing through Numerical Features (166)
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Mode: Training single model
+2025-04-18 00:11:45 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Performing 5-fold cross-validation...
+2025-04-18 00:17:00 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - 5-Fold CV RMSE: 1.1616 +/- 0.0620
+2025-04-18 00:17:00 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Training final model...
+2025-04-18 00:17:34 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Final model training complete. Time: 0:00:33.820548
+2025-04-18 00:17:34 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Calculating score on the full training set...
+2025-04-18 00:18:20 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Training RMSE: 0.9924
+2025-04-18 00:18:20 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Gap (CV RMSE - Train RMSE): +0.1692
+2025-04-18 00:18:50 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Predictions generated for single run.
+2025-04-18 00:18:50 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Final predictions clamped and rounded.
+2025-04-18 00:18:50 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - Submission file saved to './submission_TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45.csv'
+2025-04-18 00:18:50 - TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 - INFO - --- Finished Run: TabPFN_MultiOutput_v6_FE_native_nan_SingleRun_5FoldCV_2025-04-18_00-11-45 ---

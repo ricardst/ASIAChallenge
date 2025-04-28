@@ -1,0 +1,133 @@
+2025-04-15 21:40:33 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33 - INFO - --- Starting Run: LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33 ---
+2025-04-15 21:40:33 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-15 21:40:33 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33 - INFO - Selected Model Type: LightGBM
+2025-04-15 21:40:33 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33 - INFO - Hyperparameter Search Enabled: True
+2025-04-15 21:40:33 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33 - INFO - Impute Numerical Features: False
+2025-04-15 21:40:33 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33 - INFO - Data Directory: ./
+2025-04-15 21:40:33 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33 - INFO - Output Submission File: ./submission_LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33.csv
+2025-04-15 21:40:33 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33 - INFO - Loading data...
+2025-04-15 21:40:33 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-40-33 - ERROR - Error loading data: [Errno 2] No such file or directory: './test_outcomes_FUN_template_update.csv'. Please check DATA_DIR and file names.
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - --- Starting Run: LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 ---
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Selected Model Type: LightGBM
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Hyperparameter Search Enabled: True
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Impute Numerical Features: False
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Data Directory: ./
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Output Submission File: ./submission_LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10.csv
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Loading data...
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - WARNING - Replacing value 9 with NaN globally. Verify this is appropriate for all features.
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Data loaded successfully.
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Identifying features and target...
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Using 13 metadata columns.
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Target column: modben
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Preparing training data...
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Dropped 0 rows with missing values in TARGET column 'modben'.
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Training data shapes ready for preprocessing: X_train=(582, 149), y_train=(582,)
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - WARNING - Training data (X_train) contains 5736 missing values BEFORE preprocessing.
+2025-04-15 21:41:10 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-41-10 - INFO - Preparing test data...
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - --- Starting Run: LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 ---
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Selected Model Type: LightGBM
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Hyperparameter Search Enabled: True
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Impute Numerical Features: False
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Data Directory: ./
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Output Submission File: ./submission_LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16.csv
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Loading data...
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - WARNING - Replacing value 9 with NaN globally. Verify this is appropriate for all features.
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Data loaded successfully.
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Identifying features and target...
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Using 13 metadata columns.
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Target column: modben
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Preparing training data...
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Dropped 0 rows with missing values in TARGET column 'modben'.
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Training data shapes ready for preprocessing: X_train=(582, 149), y_train=(582,)
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - WARNING - Training data (X_train) contains 5736 missing values BEFORE preprocessing.
+2025-04-15 21:43:16 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-43-16 - INFO - Preparing test data...
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - --- Starting Run: LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 ---
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Selected Model Type: LightGBM
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Hyperparameter Search Enabled: True
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Impute Numerical Features: False
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Data Directory: ./
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Output Submission File: ./submission_LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07.csv
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Loading data...
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - WARNING - Replacing value 9 with NaN globally. Verify this is appropriate for all features.
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Data loaded successfully.
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Identifying features and target...
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Using 13 metadata columns.
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Target column: modben
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Preparing training data...
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Dropped 0 rows with missing values in TARGET column 'modben'.
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Training data shapes ready for preprocessing: X_train=(582, 149), y_train=(582,)
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - WARNING - Training data (X_train) contains 5736 missing values BEFORE preprocessing.
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Preparing test data...
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Test data shape: X_test=(118, 149)
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - WARNING - Test data (X_test) contains 392 missing values BEFORE preprocessing.
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Setting up preprocessing pipeline...
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Identified 4 categorical features: ['age_category', 'bmi_category', 'sexcd', 'tx1_r']
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Identified 1 ordinal features: ['ais1']
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Identified 144 numerical features.
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Numerical Imputation: Disabled (Using Model's Native NaN Handling)
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - --- Mode: Performing Hyperparameter Search for LightGBM ---
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Using 5-Fold CV and 15 HPO iterations.
+2025-04-15 21:44:07 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Starting hyperparameter search...
+2025-04-16 00:38:05 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Hyperparameter search complete.
+2025-04-16 00:38:05 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Best CV RMSE: 1.7225
+2025-04-16 00:38:05 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Best parameters found: {'regressor__colsample_bytree': 0.5993578407670862, 'regressor__learning_rate': 0.01082831756854036, 'regressor__max_depth': 13, 'regressor__n_estimators': 598, 'regressor__num_leaves': 31, 'regressor__reg_alpha': 0.71134195274865, 'regressor__reg_lambda': 0.7901755405312056, 'regressor__subsample': 0.8029799873905057, 'regressor__subsample_freq': 9}
+2025-04-16 00:38:05 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Calculating Spearman Rho on CV folds for the best HPO model...
+2025-04-16 00:55:51 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Best HPO Model Cross-validation Spearman Rho: 0.6661 +/- 0.0546
+2025-04-16 00:55:51 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Making predictions on test data using the final LightGBM pipeline...
+2025-04-16 00:55:51 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - WARNING - Test data has numerical NaNs being passed to LightGBM for native handling.
+2025-04-16 00:55:51 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Actual target range in training data: [1.0, 9.0]
+2025-04-16 00:55:51 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - WARNING - Defined score range [1, 8] differs from actual training range [1.0, 9.0]. Adjust if necessary.
+2025-04-16 00:55:51 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Clipping predictions to range [1, 8] and rounding.
+2025-04-16 00:55:51 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Predictions generated and post-processed.
+2025-04-16 00:55:51 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Generating submission file...
+2025-04-16 00:55:51 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - Submission file saved to './submission_LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07.csv'
+2025-04-16 00:55:51 - LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 - INFO - --- Finished Run: LightGBM_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-15_21-44-07 ---
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - --- Starting Run: CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 ---
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Selected Model Type: CatBoost
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Hyperparameter Search Enabled: True
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Impute Numerical Features: False
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Data Directory: ./
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Output Submission File: ./submission_CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25.csv
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Loading data...
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - WARNING - Replacing value 9 with NaN globally. Verify this is appropriate for all features.
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Data loaded successfully.
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Identifying features and target...
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Using 13 metadata columns.
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Target column: modben
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Preparing training data...
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Dropped 0 rows with missing values in TARGET column 'modben'.
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Training data shapes ready for preprocessing: X_train=(582, 149), y_train=(582,)
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - WARNING - Training data (X_train) contains 5736 missing values BEFORE preprocessing.
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Preparing test data...
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Test data shape: X_test=(118, 149)
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - WARNING - Test data (X_test) contains 392 missing values BEFORE preprocessing.
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Setting up preprocessing pipeline...
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Identified 4 categorical features: ['age_category', 'bmi_category', 'sexcd', 'tx1_r']
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Identified 1 ordinal features: ['ais1']
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Identified 144 numerical features.
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Numerical Imputation: Disabled (Using Model's Native NaN Handling)
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - --- Mode: Performing Hyperparameter Search for CatBoost ---
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Using 5-Fold CV and 15 HPO iterations.
+2025-04-16 09:20:25 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Starting hyperparameter search...
+2025-04-16 09:22:41 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Hyperparameter search complete.
+2025-04-16 09:22:41 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Best CV RMSE: 1.6263
+2025-04-16 09:22:41 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Best parameters found: {'regressor__depth': 6, 'regressor__iterations': 971, 'regressor__l2_leaf_reg': 8.080725777960454, 'regressor__learning_rate': 0.013087674144370367, 'regressor__subsample': 0.9849549260809971}
+2025-04-16 09:22:41 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Calculating Spearman Rho on CV folds for the best HPO model...
+2025-04-16 09:22:50 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Best HPO Model Cross-validation Spearman Rho: 0.6895 +/- 0.0533
+2025-04-16 09:22:50 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Making predictions on test data using the final CatBoost pipeline...
+2025-04-16 09:22:50 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - WARNING - Test data has numerical NaNs being passed to CatBoost for native handling.
+2025-04-16 09:22:50 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Actual target range in training data: [1.0, 9.0]
+2025-04-16 09:22:50 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - WARNING - Defined score range [1, 8] differs from actual training range [1.0, 9.0]. Adjust if necessary.
+2025-04-16 09:22:50 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Clipping predictions to range [1, 8] and rounding.
+2025-04-16 09:22:50 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Predictions generated and post-processed.
+2025-04-16 09:22:50 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Generating submission file...
+2025-04-16 09:22:50 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - Submission file saved to './submission_CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25.csv'
+2025-04-16 09:22:50 - CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 - INFO - --- Finished Run: CatBoost_SingleOutput_v2_FuncPred_NativeNaN_HPO_Search_2025-04-16_09-20-25 ---

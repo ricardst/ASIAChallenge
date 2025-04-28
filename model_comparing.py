@@ -222,9 +222,9 @@ elif MODEL_TYPE == 'CatBoost':
     param_distributions = { # Prefixed for RandomizedSearchCV
         'regressor__estimator__iterations': randint(100, 800),
         'regressor__estimator__learning_rate': uniform(0.01, 0.2),
-        'regressor__estimator__depth': randint(4, 10),
-        'regressor__estimator__l2_leaf_reg': uniform(1, 10), # L2 regularization
-        'regressor__estimator__subsample': uniform(0.6, 0.4), # Similar to subsample
+        'regressor__estimator__depth': randint(2, 6),
+        'regressor__estimator__l2_leaf_reg': uniform(1, 100), # L2 regularization
+        'regressor__estimator__subsample': uniform(0.3, 0.7), # Similar to subsample
         # 'regressor__estimator__colsample_bylevel': uniform(0.6, 0.4), # CatBoost equivalent to colsample_bytree
         # 'regressor__estimator__border_count': randint(32, 255) # Controls splits for numerical features
     }
@@ -246,7 +246,7 @@ if PERFORM_HYPERPARAMETER_SEARCH:
     print(f"--- Mode: Performing Hyperparameter Search for {MODEL_TYPE} ---")
     logger.info(f"Mode: Performing Hyperparameter Search for {MODEL_TYPE}")
 
-    n_iterations = 50 # <<<--- ADJUST AS NEEDED (Lower for faster testing)
+    n_iterations = 10 # <<<--- ADJUST AS NEEDED (Lower for faster testing)
     kf = KFold(n_splits=5, shuffle=True, random_state=42)
     random_search = RandomizedSearchCV(
         estimator=base_pipeline, # Use the pipeline with the correct base estimator

@@ -1,0 +1,564 @@
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 ---
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Selected Model Type: AutoTabPFN
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Cross-Validation Enabled: False
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Base AutoTabPFN Parameters: {'device': 'cuda', 'max_time': 10000}
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Data Directory: ./
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01.csv
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Loading data...
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Data loaded successfully.
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Identifying features and target...
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Using 13 metadata columns.
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Target column: modben
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Preparing training data (initial merge)...
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Training data shape after initial merge: (675, 149)
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Performing Feature Engineering...
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Shape after feature engineering: (675, 171)
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Dropped 0 rows with missing target values.
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Final training data shapes: X_train=(582, 171), y_train=(582,)
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - WARNING - Final X_train contains 7365 NaNs.
+2025-04-17 23:34:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Preparing test data...
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Shape after feature engineering: (122, 171)
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Aligning columns between final X_train and X_test...
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Test data shape (post FE, aligned): X_test=(118, 171)
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - WARNING - Final X_test contains 555 NaNs.
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Setting up preprocessing pipeline (Encode Cat/Ord, Explicit Passthrough Numerical)...
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Encoding 4 Categorical Features.
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Encoding 1 Ordinal Features.
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Passing through 166 Numerical Features (including FE).
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Column assignment verification successful.
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Defining base AutoTabPFN model structure...
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - --- Mode: Training 5 AutoTabPFN models for averaging ---
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - --- Starting Averaging Run 1/5 (Seed: 42) ---
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Cloned pipeline and set regressor random_state to 42
+2025-04-17 23:34:02 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Training model... (Max time per run: 10000s)
+2025-04-17 23:37:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - ERROR - ERROR during training run 1 (Seed: 42): CUDA out of memory. Tried to allocate 410.00 MiB. GPU 0 has a total capacity of 23.58 GiB of which 299.12 MiB is free. Process 963154 has 2.85 GiB memory in use. Process 999587 has 3.91 GiB memory in use. Process 1048482 has 15.14 GiB memory in use. Including non-PyTorch memory, this process has 1.37 GiB memory in use. Of the allocated memory 749.40 MiB is allocated by PyTorch, and 334.60 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/TabPFN_Fun.py", line 330, in <module>
+    current_pipeline.fit(X_train, y_train)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/pipeline.py", line 473, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/sklearn_interface.py", line 315, in fit
+    self.predictor_.fit(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/pfn_phe.py", line 336, in fit
+    self._ens_model.fit(X, y)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/greedy_weighted_ensemble.py", line 239, in fit
+    weights = self.get_weights(X, y)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/greedy_weighted_ensemble.py", line 174, in get_weights
+    oof_proba = self.get_oof_per_estimator(X, y)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/abstract_validation_utils.py", line 395, in get_oof_per_estimator
+    self._fill_predictions_in_place(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/abstract_validation_utils.py", line 132, in _fill_predictions_in_place
+    pred = self._predict_oof(base_model, fold_X_test)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/abstract_validation_utils.py", line 586, in _predict_oof
+    return base_model.predict(X)
+  File "/usr/lib64/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/regressor.py", line 646, in predict
+    for output, config in self.executor_.iter_outputs(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/inference.py", line 332, in iter_outputs
+    output = self.model(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/transformer.py", line 416, in forward
+    return self._forward(x, y, style=style, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/transformer.py", line 628, in _forward
+    encoder_out = self.transformer_encoder(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/transformer.py", line 89, in forward
+    x = layer(x, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/layer.py", line 449, in forward
+    state = sublayer(state)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/mlp.py", line 132, in forward
+    x = self._compute(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/memory.py", line 100, in method_
+    return x + method(self, x, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/mlp.py", line 97, in _compute
+    x = torch.nn.functional.gelu(x)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 410.00 MiB. GPU 0 has a total capacity of 23.58 GiB of which 299.12 MiB is free. Process 963154 has 2.85 GiB memory in use. Process 999587 has 3.91 GiB memory in use. Process 1048482 has 15.14 GiB memory in use. Including non-PyTorch memory, this process has 1.37 GiB memory in use. Of the allocated memory 749.40 MiB is allocated by PyTorch, and 334.60 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2025-04-17 23:37:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - WARNING - Skipping prediction storage for run 1 due to training error.
+2025-04-17 23:37:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - --- Starting Averaging Run 2/5 (Seed: 43) ---
+2025-04-17 23:37:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Cloned pipeline and set regressor random_state to 43
+2025-04-17 23:37:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Training model... (Max time per run: 10000s)
+2025-04-17 23:37:47 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - ERROR - ERROR during training run 2 (Seed: 43): CUDA out of memory. Tried to allocate 290.00 MiB. GPU 0 has a total capacity of 23.58 GiB of which 283.12 MiB is free. Process 963154 has 2.85 GiB memory in use. Process 999587 has 3.91 GiB memory in use. Process 1048482 has 15.14 GiB memory in use. Including non-PyTorch memory, this process has 1.38 GiB memory in use. Of the allocated memory 575.99 MiB is allocated by PyTorch, and 524.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/TabPFN_Fun.py", line 330, in <module>
+    current_pipeline.fit(X_train, y_train)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/pipeline.py", line 473, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/sklearn_interface.py", line 315, in fit
+    self.predictor_.fit(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/pfn_phe.py", line 336, in fit
+    self._ens_model.fit(X, y)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/greedy_weighted_ensemble.py", line 239, in fit
+    weights = self.get_weights(X, y)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/greedy_weighted_ensemble.py", line 174, in get_weights
+    oof_proba = self.get_oof_per_estimator(X, y)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/abstract_validation_utils.py", line 395, in get_oof_per_estimator
+    self._fill_predictions_in_place(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/abstract_validation_utils.py", line 132, in _fill_predictions_in_place
+    pred = self._predict_oof(base_model, fold_X_test)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/abstract_validation_utils.py", line 586, in _predict_oof
+    return base_model.predict(X)
+  File "/usr/lib64/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/regressor.py", line 646, in predict
+    for output, config in self.executor_.iter_outputs(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/inference.py", line 332, in iter_outputs
+    output = self.model(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/transformer.py", line 416, in forward
+    return self._forward(x, y, style=style, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/transformer.py", line 628, in _forward
+    encoder_out = self.transformer_encoder(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/transformer.py", line 89, in forward
+    x = layer(x, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/layer.py", line 449, in forward
+    state = sublayer(state)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/mlp.py", line 132, in forward
+    x = self._compute(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/memory.py", line 100, in method_
+    return x + method(self, x, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/mlp.py", line 97, in _compute
+    x = torch.nn.functional.gelu(x)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 290.00 MiB. GPU 0 has a total capacity of 23.58 GiB of which 283.12 MiB is free. Process 963154 has 2.85 GiB memory in use. Process 999587 has 3.91 GiB memory in use. Process 1048482 has 15.14 GiB memory in use. Including non-PyTorch memory, this process has 1.38 GiB memory in use. Of the allocated memory 575.99 MiB is allocated by PyTorch, and 524.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2025-04-17 23:37:47 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - WARNING - Skipping prediction storage for run 2 due to training error.
+2025-04-17 23:37:47 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - --- Starting Averaging Run 3/5 (Seed: 44) ---
+2025-04-17 23:37:47 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Cloned pipeline and set regressor random_state to 44
+2025-04-17 23:37:47 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Training model... (Max time per run: 10000s)
+2025-04-17 23:37:57 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - ERROR - ERROR during training run 3 (Seed: 44): CUDA out of memory. Tried to allocate 292.00 MiB. GPU 0 has a total capacity of 23.58 GiB of which 283.12 MiB is free. Process 963154 has 2.85 GiB memory in use. Process 999587 has 3.91 GiB memory in use. Process 1048482 has 15.14 GiB memory in use. Including non-PyTorch memory, this process has 1.38 GiB memory in use. Of the allocated memory 581.96 MiB is allocated by PyTorch, and 518.04 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/TabPFN_Fun.py", line 330, in <module>
+    current_pipeline.fit(X_train, y_train)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/sklearn/pipeline.py", line 473, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/sklearn_interface.py", line 315, in fit
+    self.predictor_.fit(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/pfn_phe.py", line 336, in fit
+    self._ens_model.fit(X, y)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/greedy_weighted_ensemble.py", line 239, in fit
+    weights = self.get_weights(X, y)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/greedy_weighted_ensemble.py", line 174, in get_weights
+    oof_proba = self.get_oof_per_estimator(X, y)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/abstract_validation_utils.py", line 395, in get_oof_per_estimator
+    self._fill_predictions_in_place(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/abstract_validation_utils.py", line 132, in _fill_predictions_in_place
+    pred = self._predict_oof(base_model, fold_X_test)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/tabpfn-extensions/src/tabpfn_extensions/post_hoc_ensembles/abstract_validation_utils.py", line 586, in _predict_oof
+    return base_model.predict(X)
+  File "/usr/lib64/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/regressor.py", line 646, in predict
+    for output, config in self.executor_.iter_outputs(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/inference.py", line 332, in iter_outputs
+    output = self.model(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/transformer.py", line 416, in forward
+    return self._forward(x, y, style=style, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/transformer.py", line 628, in _forward
+    encoder_out = self.transformer_encoder(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/transformer.py", line 89, in forward
+    x = layer(x, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/layer.py", line 449, in forward
+    state = sublayer(state)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/mlp.py", line 132, in forward
+    x = self._compute(
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/memory.py", line 100, in method_
+    return x + method(self, x, *args, **kwargs)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/tabpfn/model/mlp.py", line 97, in _compute
+    x = torch.nn.functional.gelu(x)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 292.00 MiB. GPU 0 has a total capacity of 23.58 GiB of which 283.12 MiB is free. Process 963154 has 2.85 GiB memory in use. Process 999587 has 3.91 GiB memory in use. Process 1048482 has 15.14 GiB memory in use. Including non-PyTorch memory, this process has 1.38 GiB memory in use. Of the allocated memory 581.96 MiB is allocated by PyTorch, and 518.04 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2025-04-17 23:37:57 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - WARNING - Skipping prediction storage for run 3 due to training error.
+2025-04-17 23:37:57 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - --- Starting Averaging Run 4/5 (Seed: 45) ---
+2025-04-17 23:37:57 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Cloned pipeline and set regressor random_state to 45
+2025-04-17 23:37:57 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-17_23-34-01 - INFO - Training model... (Max time per run: 10000s)
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 ---
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Selected Model Type: AutoTabPFN
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Cross-Validation Enabled: False
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Base AutoTabPFN Parameters: {'device': 'cuda', 'max_time': 600}
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Data Directory: ./
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38.csv
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Loading data...
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Data loaded successfully.
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Identifying features and target...
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Using 13 metadata columns.
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Target column: modben
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Preparing training data (initial merge)...
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training data shape after initial merge: (675, 149)
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Performing Feature Engineering...
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Shape after feature engineering: (675, 171)
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Dropped 0 rows with missing target values.
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Final training data shapes: X_train=(582, 171), y_train=(582,)
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - WARNING - Final X_train contains 7365 NaNs.
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Preparing test data...
+2025-04-18 12:22:38 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Shape after feature engineering: (122, 171)
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Aligning columns between final X_train and X_test...
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Test data shape (post FE, aligned): X_test=(118, 171)
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - WARNING - Final X_test contains 555 NaNs.
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Setting up preprocessing pipeline (Encode Cat/Ord, Explicit Passthrough Numerical)...
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Encoding 4 Categorical Features.
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Encoding 1 Ordinal Features.
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Passing through 166 Numerical Features (including FE).
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Column assignment verification successful.
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Defining base AutoTabPFN model structure...
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - --- Mode: Training 5 AutoTabPFN models for averaging ---
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - --- Starting Averaging Run 1/5 (Seed: 42) ---
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Cloned pipeline and set regressor random_state to 42
+2025-04-18 12:22:39 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training model... (Max time per run: 600s)
+2025-04-18 12:33:06 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training complete for run 1. Time: 0:10:27.707930
+2025-04-18 12:33:06 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Making predictions for this run...
+2025-04-18 12:35:54 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Predictions stored.
+2025-04-18 12:35:54 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - --- Starting Averaging Run 2/5 (Seed: 43) ---
+2025-04-18 12:35:54 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Cloned pipeline and set regressor random_state to 43
+2025-04-18 12:35:54 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training model... (Max time per run: 600s)
+2025-04-18 12:45:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training complete for run 2. Time: 0:10:04.138251
+2025-04-18 12:45:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Making predictions for this run...
+2025-04-18 12:48:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Predictions stored.
+2025-04-18 12:48:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - --- Starting Averaging Run 3/5 (Seed: 44) ---
+2025-04-18 12:48:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Cloned pipeline and set regressor random_state to 44
+2025-04-18 12:48:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training model... (Max time per run: 600s)
+2025-04-18 12:59:06 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training complete for run 3. Time: 0:10:28.817864
+2025-04-18 12:59:06 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Making predictions for this run...
+2025-04-18 13:02:09 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Predictions stored.
+2025-04-18 13:02:10 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - --- Starting Averaging Run 4/5 (Seed: 45) ---
+2025-04-18 13:02:10 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Cloned pipeline and set regressor random_state to 45
+2025-04-18 13:02:10 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training model... (Max time per run: 600s)
+2025-04-18 13:12:14 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training complete for run 4. Time: 0:10:04.216939
+2025-04-18 13:12:14 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Making predictions for this run...
+2025-04-18 13:13:43 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Predictions stored.
+2025-04-18 13:13:43 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - --- Starting Averaging Run 5/5 (Seed: 46) ---
+2025-04-18 13:13:43 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Cloned pipeline and set regressor random_state to 46
+2025-04-18 13:13:43 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training model... (Max time per run: 600s)
+2025-04-18 13:23:53 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Training complete for run 5. Time: 0:10:09.979507
+2025-04-18 13:23:53 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Making predictions for this run...
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Predictions stored.
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Averaging predictions across 5 successful runs...
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Averaging complete.
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Post-processing final predictions...
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Actual target range in training data: [1, 9]
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - WARNING - Defined score range [1, 8] differs from actual training range [1, 9]. Verify clipping.
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Clipping predictions to range [1, 8] and rounding.
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Clamping and rounding complete.
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Generating submission file...
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - Submission file saved to './submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38.csv'
+2025-04-18 13:28:55 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 - INFO - --- Finished Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_12-22-38 ---
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 ---
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Selected Model Type: AutoTabPFN
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Cross-Validation Enabled: False
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Base AutoTabPFN Parameters: {'device': 'cuda', 'max_time': 600}
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Data Directory: ./
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58.csv
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Loading data...
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Data loaded successfully.
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Identifying features and target...
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Using 13 metadata columns.
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Target column: modben
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Preparing training data (initial merge)...
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Training data shape after initial merge: (675, 149)
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Performing Feature Engineering...
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Shape after feature engineering: (675, 171)
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Dropped 0 rows with missing target values.
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Final training data shapes: X_train=(582, 171), y_train=(582,)
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - WARNING - Final X_train contains 7365 NaNs.
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Preparing test data...
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Shape after feature engineering: (122, 171)
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Aligning columns between final X_train and X_test...
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Test data shape (post FE, aligned): X_test=(118, 171)
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - WARNING - Final X_test contains 555 NaNs.
+2025-04-18 14:16:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-16-58 - INFO - Running automated feature selection…
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 ---
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Selected Model Type: AutoTabPFN
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Cross-Validation Enabled: False
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Base AutoTabPFN Parameters: {'device': 'cuda', 'max_time': 600}
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Data Directory: ./
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59.csv
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Loading data...
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Data loaded successfully.
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Identifying features and target...
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Using 13 metadata columns.
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Target column: modben
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Preparing training data (initial merge)...
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Training data shape after initial merge: (675, 149)
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Performing Feature Engineering...
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Shape after feature engineering: (675, 171)
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Dropped 0 rows with missing target values.
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Final training data shapes: X_train=(582, 171), y_train=(582,)
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - WARNING - Final X_train contains 7365 NaNs.
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Preparing test data...
+2025-04-18 14:19:59 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Shape after feature engineering: (122, 171)
+2025-04-18 14:20:00 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Aligning columns between final X_train and X_test...
+2025-04-18 14:20:00 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Test data shape (post FE, aligned): X_test=(118, 171)
+2025-04-18 14:20:00 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - WARNING - Final X_test contains 555 NaNs.
+2025-04-18 14:20:00 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-19-59 - INFO - Running automated feature selection…
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 ---
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Selected Model Type: AutoTabPFN
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Cross-Validation Enabled: False
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Base AutoTabPFN Parameters: {'device': 'cuda', 'max_time': 600}
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Data Directory: ./
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19.csv
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Loading data...
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Data loaded successfully.
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Identifying features and target...
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Using 13 metadata columns.
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Target column: modben
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Preparing training data (initial merge)...
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Training data shape after initial merge: (675, 149)
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Performing Feature Engineering...
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Shape after feature engineering: (675, 171)
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Dropped 0 rows with missing target values.
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Final training data shapes: X_train=(582, 171), y_train=(582,)
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - WARNING - Final X_train contains 7365 NaNs.
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Preparing test data...
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Shape after feature engineering: (122, 171)
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Aligning columns between final X_train and X_test...
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Test data shape (post FE, aligned): X_test=(118, 171)
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - WARNING - Final X_test contains 555 NaNs.
+2025-04-18 14:21:19 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-19 - INFO - Running automated feature selection…
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 ---
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Selected Model Type: AutoTabPFN
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Cross-Validation Enabled: False
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Base AutoTabPFN Parameters: {'device': 'cuda', 'max_time': 600}
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Data Directory: ./
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56.csv
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Loading data...
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Data loaded successfully.
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Identifying features and target...
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Using 13 metadata columns.
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Target column: modben
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Preparing training data (initial merge)...
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Training data shape after initial merge: (675, 149)
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Performing Feature Engineering...
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Shape after feature engineering: (675, 171)
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Dropped 0 rows with missing target values.
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Final training data shapes: X_train=(582, 171), y_train=(582,)
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - WARNING - Final X_train contains 7365 NaNs.
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Preparing test data...
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Shape after feature engineering: (122, 171)
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Aligning columns between final X_train and X_test...
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Test data shape (post FE, aligned): X_test=(118, 171)
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - WARNING - Final X_test contains 555 NaNs.
+2025-04-18 14:21:56 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-21-56 - INFO - Running automated feature selection…
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 ---
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Selected Model Type: AutoTabPFN
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Cross-Validation Enabled: False
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Base AutoTabPFN Parameters: {'device': 'cuda', 'max_time': 600}
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Data Directory: ./
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11.csv
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Loading data...
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Data loaded successfully.
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Identifying features and target...
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Using 13 metadata columns.
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Target column: modben
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Preparing training data (initial merge)...
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training data shape after initial merge: (675, 149)
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Performing Feature Engineering...
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Shape after feature engineering: (675, 171)
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Dropped 0 rows with missing target values.
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Final training data shapes: X_train=(582, 171), y_train=(582,)
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - WARNING - Final X_train contains 7365 NaNs.
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Preparing test data...
+2025-04-18 14:25:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Shape after feature engineering: (122, 171)
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Aligning columns between final X_train and X_test...
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Test data shape (post FE, aligned): X_test=(118, 171)
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - WARNING - Final X_test contains 555 NaNs.
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Running automated feature selection…
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Selected 54 features: ['FE_LEMS_Wk1', 'ankpll01', 'ankplr01', 'anyana01', 'hipfll01', 'hipflr01', 'kneetr01', 'kneexl01', 'l1ltl01', 'l1ltr01', 'l1ppl01', 'l2ltl01', 'l2ltr01', 'l2ppl01', 'l3ltl01', 'l3ltr01', 'l3ppl01', 'l3ppr01', 'l4ltl01', 'l4ltr01', 'l4ppl01', 'l4ppr01', 'l5ltl01', 'l5ltr01', 'l5ppl01', 's1ltl01', 's1ltr01', 's1ppl01', 's1ppr01', 's2ltl01', 's2ltr01', 's2ppl01', 's2ppr01', 's3ltl01', 's3ltr01', 's3ppl01', 's3ppr01', 's45ltl01', 's45ltr01', 's45ppl01', 's45ppr01', 't10ltl01', 't10ltr01', 't11ltl01', 't11ltr01', 't12ltl01', 't12ltr01', 't12ppl01', 't9ltl01', 'vaccd01', 'age_category', 'ais1', 'bmi_category', 'tx1_r']
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Setting up preprocessing pipeline (Encode Cat/Ord, Explicit Passthrough Numerical)...
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Encoding 3 Categorical Features.
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Encoding 1 Ordinal Features.
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Passing through 50 Numerical Features (including FE).
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Column assignment verification successful.
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Defining base AutoTabPFN model structure...
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - --- Mode: Training 5 AutoTabPFN models for averaging ---
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - --- Starting Averaging Run 1/5 (Seed: 42) ---
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Cloned pipeline and set regressor random_state to 42
+2025-04-18 14:25:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training model... (Max time per run: 600s)
+2025-04-18 14:35:15 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training complete for run 1. Time: 0:10:03.092206
+2025-04-18 14:35:15 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Making predictions for this run...
+2025-04-18 14:35:17 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Predictions stored.
+2025-04-18 14:35:17 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - --- Starting Averaging Run 2/5 (Seed: 43) ---
+2025-04-18 14:35:17 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Cloned pipeline and set regressor random_state to 43
+2025-04-18 14:35:17 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training model... (Max time per run: 600s)
+2025-04-18 14:45:27 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training complete for run 2. Time: 0:10:09.698919
+2025-04-18 14:45:27 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Making predictions for this run...
+2025-04-18 14:46:43 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Predictions stored.
+2025-04-18 14:46:43 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - --- Starting Averaging Run 3/5 (Seed: 44) ---
+2025-04-18 14:46:43 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Cloned pipeline and set regressor random_state to 44
+2025-04-18 14:46:43 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training model... (Max time per run: 600s)
+2025-04-18 14:56:42 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training complete for run 3. Time: 0:09:58.960457
+2025-04-18 14:56:42 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Making predictions for this run...
+2025-04-18 14:57:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Predictions stored.
+2025-04-18 14:57:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - --- Starting Averaging Run 4/5 (Seed: 45) ---
+2025-04-18 14:57:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Cloned pipeline and set regressor random_state to 45
+2025-04-18 14:57:37 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training model... (Max time per run: 600s)
+2025-04-18 15:07:42 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training complete for run 4. Time: 0:10:04.745005
+2025-04-18 15:07:42 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Making predictions for this run...
+2025-04-18 15:09:27 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Predictions stored.
+2025-04-18 15:09:27 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - --- Starting Averaging Run 5/5 (Seed: 46) ---
+2025-04-18 15:09:27 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Cloned pipeline and set regressor random_state to 46
+2025-04-18 15:09:27 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training model... (Max time per run: 600s)
+2025-04-18 15:19:29 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Training complete for run 5. Time: 0:10:02.593896
+2025-04-18 15:19:29 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Making predictions for this run...
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Predictions stored.
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Averaging predictions across 5 successful runs...
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Averaging complete.
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Post-processing final predictions...
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Actual target range in training data: [1, 9]
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - WARNING - Defined score range [1, 8] differs from actual training range [1, 9]. Verify clipping.
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Clipping predictions to range [1, 8] and rounding.
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Clamping and rounding complete.
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Generating submission file...
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - Submission file saved to './submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11.csv'
+2025-04-18 15:21:30 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 - INFO - --- Finished Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_14-25-11 ---
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 ---
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Selected Model Type: AutoTabPFN
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Manual Averaging Enabled: True (Runs: 5)
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Cross-Validation Enabled: False
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Base AutoTabPFN Parameters: {'device': 'cuda', 'max_time': 1800}
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Data Directory: ./
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12.csv
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Loading data...
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Data loaded successfully.
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Identifying features and target...
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Using 13 metadata columns.
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Target column: modben
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Preparing training data (initial merge)...
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training data shape after initial merge: (675, 149)
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Performing Feature Engineering...
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Shape after feature engineering: (675, 171)
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Dropped 0 rows with missing target values.
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Final training data shapes: X_train=(582, 171), y_train=(582,)
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - WARNING - Final X_train contains 7365 NaNs.
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Preparing test data...
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Shape after feature engineering: (122, 171)
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Aligning columns between final X_train and X_test...
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Test data shape (post FE, aligned): X_test=(118, 171)
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - WARNING - Final X_test contains 555 NaNs.
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Running automated feature selection…
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Selected 54 features: ['FE_LEMS_Wk1', 'ankpll01', 'ankplr01', 'anyana01', 'hipfll01', 'hipflr01', 'kneetr01', 'kneexl01', 'l1ltl01', 'l1ltr01', 'l1ppl01', 'l2ltl01', 'l2ltr01', 'l2ppl01', 'l3ltl01', 'l3ltr01', 'l3ppl01', 'l3ppr01', 'l4ltl01', 'l4ltr01', 'l4ppl01', 'l4ppr01', 'l5ltl01', 'l5ltr01', 'l5ppl01', 's1ltl01', 's1ltr01', 's1ppl01', 's1ppr01', 's2ltl01', 's2ltr01', 's2ppl01', 's2ppr01', 's3ltl01', 's3ltr01', 's3ppl01', 's3ppr01', 's45ltl01', 's45ltr01', 's45ppl01', 's45ppr01', 't10ltl01', 't10ltr01', 't11ltl01', 't11ltr01', 't12ltl01', 't12ltr01', 't12ppl01', 't9ltl01', 'vaccd01', 'age_category', 'ais1', 'bmi_category', 'tx1_r']
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Setting up preprocessing pipeline (Encode Cat/Ord, Explicit Passthrough Numerical)...
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Encoding 3 Categorical Features.
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Encoding 1 Ordinal Features.
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Passing through 50 Numerical Features (including FE).
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Column assignment verification successful.
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Defining base AutoTabPFN model structure...
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - --- Mode: Training 5 AutoTabPFN models for averaging ---
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - --- Starting Averaging Run 1/5 (Seed: 42) ---
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Cloned pipeline and set regressor random_state to 42
+2025-04-18 15:29:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training model... (Max time per run: 1800s)
+2025-04-18 15:45:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training complete for run 1. Time: 0:15:58.400184
+2025-04-18 15:45:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Making predictions for this run...
+2025-04-18 15:45:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Predictions stored.
+2025-04-18 15:45:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - --- Starting Averaging Run 2/5 (Seed: 43) ---
+2025-04-18 15:45:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Cloned pipeline and set regressor random_state to 43
+2025-04-18 15:45:12 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training model... (Max time per run: 1800s)
+2025-04-18 16:02:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training complete for run 2. Time: 0:17:45.868878
+2025-04-18 16:02:58 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Making predictions for this run...
+2025-04-18 16:04:33 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Predictions stored.
+2025-04-18 16:04:33 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - --- Starting Averaging Run 3/5 (Seed: 44) ---
+2025-04-18 16:04:33 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Cloned pipeline and set regressor random_state to 44
+2025-04-18 16:04:33 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training model... (Max time per run: 1800s)
+2025-04-18 16:20:26 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training complete for run 3. Time: 0:15:52.778944
+2025-04-18 16:20:26 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Making predictions for this run...
+2025-04-18 16:22:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Predictions stored.
+2025-04-18 16:22:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - --- Starting Averaging Run 4/5 (Seed: 45) ---
+2025-04-18 16:22:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Cloned pipeline and set regressor random_state to 45
+2025-04-18 16:22:01 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training model... (Max time per run: 1800s)
+2025-04-18 16:43:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training complete for run 4. Time: 0:21:10.202845
+2025-04-18 16:43:11 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Making predictions for this run...
+2025-04-18 16:45:29 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Predictions stored.
+2025-04-18 16:45:29 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - --- Starting Averaging Run 5/5 (Seed: 46) ---
+2025-04-18 16:45:29 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Cloned pipeline and set regressor random_state to 46
+2025-04-18 16:45:29 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training model... (Max time per run: 1800s)
+2025-04-18 17:07:27 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Training complete for run 5. Time: 0:21:57.405183
+2025-04-18 17:07:27 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Making predictions for this run...
+2025-04-18 17:12:21 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Predictions stored.
+2025-04-18 17:12:22 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Averaging predictions across 5 successful runs...
+2025-04-18 17:12:22 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Averaging complete.
+2025-04-18 17:12:22 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Post-processing final predictions...
+2025-04-18 17:12:22 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Actual target range in training data: [1, 9]
+2025-04-18 17:12:22 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - WARNING - Defined score range [1, 8] differs from actual training range [1, 9]. Verify clipping.
+2025-04-18 17:12:22 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Clipping predictions to range [1, 8] and rounding.
+2025-04-18 17:12:22 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Clamping and rounding complete.
+2025-04-18 17:12:22 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Generating submission file...
+2025-04-18 17:12:22 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - Submission file saved to './submission_AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12.csv'
+2025-04-18 17:12:22 - AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 - INFO - --- Finished Run: AutoTabPFN_SingleOutput_v3_FuncPred_FE_Avg5_NoCV_2025-04-18_15-29-12 ---

@@ -1,0 +1,145 @@
+2025-04-16 21:43:24 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24 ---
+2025-04-16 21:43:24 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-16 21:43:24 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24 - INFO - Selected Model Type: AutoTabPFN
+2025-04-16 21:43:24 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24 - INFO - Cross-Validation Enabled: True (5 folds)
+2025-04-16 21:43:24 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24 - INFO - AutoTabPFN Parameters: {'random_state': 42, 'device': 'cuda', 'max_time': 600}
+2025-04-16 21:43:24 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24 - INFO - Data Directory: ./
+2025-04-16 21:43:24 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24.csv
+2025-04-16 21:43:24 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24 - INFO - Loading data...
+2025-04-16 21:43:24 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-43-24 - ERROR - Error loading data: [Errno 2] No such file or directory: './test_outcomes_functional_template.csv'. Please check DATA_DIR and file names.
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 ---
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Selected Model Type: AutoTabPFN
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Cross-Validation Enabled: True (5 folds)
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - AutoTabPFN Parameters: {'random_state': 42, 'device': 'cuda', 'max_time': 600}
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Data Directory: ./
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29.csv
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Loading data...
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Data loaded successfully.
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Identifying features and target...
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Using 13 metadata columns.
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Target column: modben
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Preparing training data...
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Dropped 0 rows with missing values in TARGET column 'modben'.
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Training data shapes ready for preprocessing: X_train=(582, 149), y_train=(582,)
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - WARNING - Training data (X_train) contains 5736 missing values BEFORE preprocessing (numerical NaNs will be passed to TabPFN).
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Preparing test data...
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Test data shape: X_test=(118, 149)
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - WARNING - Test data (X_test) contains 392 missing values BEFORE preprocessing (numerical NaNs will be passed to TabPFN).
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Setting up preprocessing pipeline (Encode Cat/Ord, Passthrough Numerical)...
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Identified 4 categorical features: ['age_category', 'bmi_category', 'sexcd', 'tx1_r']
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Identified 1 ordinal features: ['ais1']
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Identified 144 numerical features (will be passed through).
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Defining AutoTabPFN model...
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - --- Performing 5-Fold Cross-Validation ---
+2025-04-16 21:44:29 - AutoTabPFN_SingleOutput_v1_FuncPred_5FoldCV_2025-04-16_21-44-29 - INFO - Calculating CV RMSE using 1 job(s)...
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 ---
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Selected Model Type: AutoTabPFN
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Cross-Validation Enabled: False (5 folds)
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - AutoTabPFN Parameters: {'random_state': 42, 'device': 'cuda', 'max_time': 600}
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Data Directory: ./
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50.csv
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Loading data...
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Data loaded successfully.
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Identifying features and target...
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Using 13 metadata columns.
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Target column: modben
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Preparing training data...
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Dropped 0 rows with missing values in TARGET column 'modben'.
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Training data shapes ready for preprocessing: X_train=(582, 149), y_train=(582,)
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - WARNING - Training data (X_train) contains 5736 missing values BEFORE preprocessing (numerical NaNs will be passed to TabPFN).
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Preparing test data...
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Test data shape: X_test=(118, 149)
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - WARNING - Test data (X_test) contains 392 missing values BEFORE preprocessing (numerical NaNs will be passed to TabPFN).
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Setting up preprocessing pipeline (Encode Cat/Ord, Passthrough Numerical)...
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Identified 4 categorical features: ['age_category', 'bmi_category', 'sexcd', 'tx1_r']
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Identified 1 ordinal features: ['ais1']
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Identified 144 numerical features (will be passed through).
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Defining AutoTabPFN model...
+2025-04-16 21:44:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - --- Training Final Model on All Training Data ---
+2025-04-16 21:54:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Final model training complete. Time: 0:09:59.755237
+2025-04-16 21:54:50 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Making predictions on test data using the final AutoTabPFN pipeline...
+2025-04-16 21:57:16 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Actual target range in training data: [1, 9]
+2025-04-16 21:57:16 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - WARNING - Defined score range [1, 8] differs from actual training range [1, 9]. Adjust clipping if necessary.
+2025-04-16 21:57:16 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Clipping predictions to range [1, 8] and rounding.
+2025-04-16 21:57:16 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Predictions generated and post-processed.
+2025-04-16 21:57:16 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Generating submission file...
+2025-04-16 21:57:16 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - Submission file saved to './submission_AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50.csv'
+2025-04-16 21:57:16 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 - INFO - --- Finished Run: AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_21-44-50 ---
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 ---
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Selected Model Type: AutoTabPFN
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Cross-Validation Enabled: False (5 folds)
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - AutoTabPFN Parameters: {'random_state': 42, 'device': 'cuda', 'max_time': 3600}
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Data Directory: ./
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12.csv
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Loading data...
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Data loaded successfully.
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Identifying features and target...
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Using 13 metadata columns.
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Target column: modben
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Preparing training data...
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Dropped 0 rows with missing values in TARGET column 'modben'.
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Training data shapes ready for preprocessing: X_train=(582, 149), y_train=(582,)
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - WARNING - Training data (X_train) contains 5736 missing values BEFORE preprocessing (numerical NaNs will be passed to TabPFN).
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Preparing test data...
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Test data shape: X_test=(118, 149)
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - WARNING - Test data (X_test) contains 392 missing values BEFORE preprocessing (numerical NaNs will be passed to TabPFN).
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Setting up preprocessing pipeline (Encode Cat/Ord, Passthrough Numerical)...
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Identified 4 categorical features: ['age_category', 'bmi_category', 'sexcd', 'tx1_r']
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Identified 1 ordinal features: ['ais1']
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Identified 144 numerical features (will be passed through).
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Defining AutoTabPFN model...
+2025-04-16 22:10:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - --- Training Final Model on All Training Data ---
+2025-04-16 23:03:28 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Final model training complete. Time: 0:53:15.254374
+2025-04-16 23:03:28 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Making predictions on test data using the final AutoTabPFN pipeline...
+2025-04-16 23:06:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Actual target range in training data: [1, 9]
+2025-04-16 23:06:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - WARNING - Defined score range [1, 8] differs from actual training range [1, 9]. Adjust clipping if necessary.
+2025-04-16 23:06:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Clipping predictions to range [1, 8] and rounding.
+2025-04-16 23:06:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Predictions generated and post-processed.
+2025-04-16 23:06:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Generating submission file...
+2025-04-16 23:06:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - Submission file saved to './submission_AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12.csv'
+2025-04-16 23:06:12 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 - INFO - --- Finished Run: AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_22-10-12 ---
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 ---
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Predicting Functional Outcome (Benzel Score)
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Selected Model Type: AutoTabPFN
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Cross-Validation Enabled: False (5 folds)
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - AutoTabPFN Parameters: {'random_state': 42, 'device': 'cuda', 'max_time': 10000}
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Data Directory: ./
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Output Submission File: ./submission_AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09.csv
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Loading data...
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness.
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Data loaded successfully.
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Identifying features and target...
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Using 135 Week 1 feature columns common to train and test.
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Using 13 metadata columns.
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Target column: modben
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Preparing training data...
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Dropped 0 rows with missing values in TARGET column 'modben'.
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Training data shapes ready for preprocessing: X_train=(582, 149), y_train=(582,)
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - WARNING - Training data (X_train) contains 5736 missing values BEFORE preprocessing (numerical NaNs will be passed to TabPFN).
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Preparing test data...
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Test data shape: X_test=(118, 149)
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - WARNING - Test data (X_test) contains 392 missing values BEFORE preprocessing (numerical NaNs will be passed to TabPFN).
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Setting up preprocessing pipeline (Encode Cat/Ord, Passthrough Numerical)...
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Identified 4 categorical features: ['age_category', 'bmi_category', 'sexcd', 'tx1_r']
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Identified 1 ordinal features: ['ais1']
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Identified 144 numerical features (will be passed through).
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Defining AutoTabPFN model...
+2025-04-16 23:35:09 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - --- Training Final Model on All Training Data ---
+2025-04-17 02:19:24 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Final model training complete. Time: 2:44:14.984064
+2025-04-17 02:19:24 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Making predictions on test data using the final AutoTabPFN pipeline...
+2025-04-17 02:24:54 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Actual target range in training data: [1, 9]
+2025-04-17 02:24:54 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - WARNING - Defined score range [1, 8] differs from actual training range [1, 9]. Adjust clipping if necessary.
+2025-04-17 02:24:54 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Clipping predictions to range [1, 8] and rounding.
+2025-04-17 02:24:54 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Predictions generated and post-processed.
+2025-04-17 02:24:54 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Generating submission file...
+2025-04-17 02:24:54 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - Submission file saved to './submission_AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09.csv'
+2025-04-17 02:24:54 - AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 - INFO - --- Finished Run: AutoTabPFN_SingleOutput_v1_FuncPred_NoCV_2025-04-16_23-35-09 ---
