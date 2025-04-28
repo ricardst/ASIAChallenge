@@ -46,6 +46,7 @@ The provided script (`TabPFN_Fun.py`) handles data preprocessing, feature engine
 
 ```bash
 python TabPFN_Fun.py
+```
 
 ## Summary
 Our winning solution predicts the modified Benzel functional score (target modben) 6-12 months post-spinal cord injury using patient data available within the first week, along with metadata. The core modeling technique is the AutoTabPFNRegressor from the tabpfn_extensions library, which leverages the TabPFN model optimized for tabular data. To enhance robustness, predictions from 5 independent training runs (using different random seeds) of the AutoTabPFNRegressor pipeline were averaged. Key input features included patient metadata (age, sex, BMI category), select week 1 clinical assessments (AIS grade, motor/sensory scores), the target prediction time (26 vs 52 weeks), and extensively engineered features derived from both week 1 scores and external data representing future motor scores (predicted for test, actual for train). The model was developed in Python using scikit-learn for preprocessing/pipelines and tabpfn / torch for the regressor. Each of the 5 training runs was allocated a time budget of 3600 seconds (1 hour), leading to a total training time of approximately 5 hours plus overhead on a CUDA-enabled GPU.
