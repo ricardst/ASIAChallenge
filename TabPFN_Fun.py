@@ -23,6 +23,8 @@ from sklearn import clone # For cloning pipeline in averaging loop
 # Pandas type checking
 import pandas.api.types as ptypes
 
+from scipy.stats import spearmanr # For Spearman correlation
+
 # TabPFN specific import
 try:
     # Using AutoTabPFNRegressor for automated ensembling/tuning within TabPFN
@@ -594,7 +596,7 @@ else:
 
 logger.info(f"  Training data shape before autoFS: {X_train_pre_fs.shape}")
 # Free memory
-del X_train_merged_fe_all, train_full_df, X_train_raw_final, y_train_raw, time_train_raw
+del X_train_merged_fe_all, train_full_df, y_train_raw, time_train_raw
 gc.collect()
 
 
