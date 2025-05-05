@@ -715,6 +715,18 @@ train_nan_count = X_train.isnull().sum().sum()
 test_nan_count = X_test.isnull().sum().sum()
 if train_nan_count > 0: logger.warning(f"Final X_train contains {train_nan_count} NaNs (will be passed to model).")
 if test_nan_count > 0: logger.warning(f"Final X_test contains {test_nan_count} NaNs (will be passed to model).")
+
+# --- Save the list of final features used ---
+# This list is needed by the prediction script to select the correct columns
+final_features_filename = os.path.join(MODELS_DIR, 'final_features_used.joblib')
+try:
+    joblib.dump(FINAL_FEATURES_USED, final_features_filename)
+    logger.info(f"Saved list of {len(FINAL_FEATURES_USED)} final features used to: {final_features_filename}")
+except Exception as e_save_feats:
+    logger.error(f"ERROR saving final features list: {e_save_feats}", exc_info=True)
+    # Decide if this is critical - maybe exit if prediction script relies on it?
+    # For now, just log the error.
+    
 # Free memory
 del X_train_pre_fs, X_test_pre_fs
 gc.collect()
