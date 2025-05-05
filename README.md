@@ -37,10 +37,11 @@ The model was trained and tested using the following hardware configuration:
 
 ## Running the Code
 
-The project provides two main scripts:
+The project provides two main scripts and one additional script where the predictions of the Impairment Track originate from:
 
 1.  **`TabPFN_Fun.py`**: Handles data preprocessing, feature engineering, training the ensemble of models, saving the trained models and feature list, generating predictions from the *current* training run, and creating a submission file.
 2.  **`Predict_from_saved_model.py`**: Loads previously saved models and the corresponding feature list from a specific training run directory, prepares the test data accordingly, generates predictions by averaging the loaded models, and creates a submission file.
+3.  **`TabPFN_Fun.py`**: Handles the pipline to get predictions for the Impairment Track. The output file is already in the Input_Files folder, so it's rendundant to run this. It's added here as explanation for the origin of the input file.
 
 **Workflow:**
 
