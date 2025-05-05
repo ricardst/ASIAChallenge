@@ -9,6 +9,8 @@ import datetime
 import logging
 import torch # For checking CUDA availability
 import gc # For garbage collection
+import joblib # For saving models
+import os
 
 # Scikit-learn imports
 from sklearn.model_selection import KFold, cross_val_score
@@ -46,11 +48,12 @@ warnings.filterwarnings('ignore') # Suppress warnings for cleaner output
 
 # --- File Paths ---
 DATA_DIR = './' # <<<--- Adapt this path to your data directory
-METADATA_FILE = f'{DATA_DIR}metadata.csv'
-TRAIN_FEATURES_FILE = f'{DATA_DIR}train_features.csv' # Original Wk1 features
-TRAIN_OUTCOMES_FILE = f'{DATA_DIR}train_outcomes_functional.csv' # Target (modben)
-TEST_FEATURES_FILE = f'{DATA_DIR}test_features.csv' # Original Wk1 features for test
-SUBMISSION_TEMPLATE_FILE = f'{DATA_DIR}test_outcomes_Fun_template_update.csv' # Submission format
+INPUT_DATA_DIR = f'{DATA_DIR}Input_Files/'
+METADATA_FILE = f'{INPUT_DATA_DIR}metadata.csv'
+TRAIN_FEATURES_FILE = f'{INPUT_DATA_DIR}train_features.csv' # Original Wk1 features
+TRAIN_OUTCOMES_FILE = f'{INPUT_DATA_DIR}train_outcomes_functional.csv' # Target (modben)
+TEST_FEATURES_FILE = f'{INPUT_DATA_DIR}test_features.csv' # Original Wk1 features for test
+SUBMISSION_TEMPLATE_FILE = f'{INPUT_DATA_DIR}test_outcomes_Fun_template_update.csv' # Submission format
 
 # --- External Future Motor Score Data ---
 # Set to True to load and use features derived from future motor scores
@@ -58,11 +61,9 @@ SUBMISSION_TEMPLATE_FILE = f'{DATA_DIR}test_outcomes_Fun_template_update.csv' # 
 USE_FUTURE_MOTOR_FEATURES = True
 # Path to the file containing PREDICTED future motor scores for the TEST set
 # (e.g., a submission file from the neurological recovery track)
-EXTERNAL_PREDS_FILE = f'{DATA_DIR}submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13.csv'
+EXTERNAL_PREDS_FILE = f'{INPUT_DATA_DIR}submission_MS_test_outcomes.csv'
 # Path to the file containing ACTUAL future motor scores for the TRAIN set
-# !! IMPORTANT !! Assumes this file exists (e.g., train_outcomes_MS.csv)
-# Alternatively, point this to a file with OOF predictions for the training set.
-TRAIN_OUTCOMES_MOTOR_FILE = f'{DATA_DIR}train_outcomes_MS.csv'
+TRAIN_OUTCOMES_MOTOR_FILE = f'{INPUT_DATA_DIR}train_outcomes_MS.csv'
 
 # --- Manual Feature Group Selection ---
 # Select which categories of features to *initially* consider before automated selection.
@@ -109,7 +110,9 @@ AUTOTABPFN_PARAMS = {
 # ==============================================================================
 
 # --- Generate Run ID and Log Filename ---
-log_file = 'Functional_Metrics_AutoTabPFN_AvgFE_AutoFS_Ext.log' # Log filename
+LOG_DIR = f'{DATA_DIR}Log_Files'
+log_filename = 'Functional_Metrics_AutoTabPFN_AvgFE_AutoFS_Ext.log'
+log_file = os.path.join(LOG_DIR, log_filename) # Full path to the log file
 # Components for Run ID based on configuration
 cv_mode_str = f"{CV_FOLDS}FoldCV" if (PERFORM_CV and not PERFORM_AVERAGING) else "NoCV"
 avg_mode_str = f"Avg{N_AVERAGING_RUNS}" if PERFORM_AVERAGING else "SingleRun"
@@ -119,7 +122,20 @@ base_model_name = f"{MODEL_TYPE}_SingleOutput_v6_FuncPred_{ms_str}_{fs_str}" # v
 model_name = f"{base_model_name}_{avg_mode_str}_{cv_mode_str}"
 run_timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 run_id = f"{model_name}_{run_timestamp}"
-SUBMISSION_OUTPUT_FILE = f'{DATA_DIR}submission_{run_id}.csv' # Final submission filename
+# Define submission file path within the new folder
+SUBMISSION_OUTPUT_FILE = f'{DATA_DIR}Submission_Files/submission_{run_id}.csv' # Final submission filename
+# Define models directory path within the new folder
+MODELS_DIR = f'{DATA_DIR}Submission_Files/trained_models_{run_id}'
+
+# --- Create Log Directory ---
+try:
+    os.makedirs(LOG_DIR, exist_ok=True)
+    # No need to log here yet, logger isn't fully configured
+except OSError as e:
+    # Print error to console if directory creation fails, as logger isn't ready
+    print(f"CRITICAL ERROR: Could not create log directory {LOG_DIR}: {e}")
+    print("Exiting.")
+    exit(1) # Exit if we can't create the log directory
 
 # --- Configure Logger ---
 logger = logging.getLogger(run_id)
@@ -151,8 +167,19 @@ if USE_FUTURE_MOTOR_FEATURES:
     logger.info(f"  External Preds File (Test): {EXTERNAL_PREDS_FILE}")
     logger.info(f"  External Outcomes File (Train): {TRAIN_OUTCOMES_MOTOR_FILE}")
 logger.info(f"Data Directory: {DATA_DIR}")
+logger.info(f"Log File: {log_file}")
 logger.info(f"Submission File: {SUBMISSION_OUTPUT_FILE}")
 logger.info(f"TabPFN Device: {TABPFN_DEVICE}")
+
+# --- Create Model Save Directory ---
+try:
+    # Create the directory if it doesn't exist.
+    # exist_ok=True prevents an error if the directory already exists.
+    os.makedirs(MODELS_DIR, exist_ok=True)
+    logger.info(f"Created/verified models directory: {MODELS_DIR}")
+except OSError as e:
+    logger.error(f"Error creating models directory {MODELS_DIR}: {e}", exc_info=True)
+    logger.error("Models will not be saved. Exiting.")
 
 # ==============================================================================
 # Helper Functions
@@ -669,6 +696,8 @@ if DO_FEATURE_SELECTION:
         var_thresh=VAR_THRESH, corr_thresh=CORR_THRESH, k=UNIVARIATE_K
     )
     logger.info(f"--- Feature Selection Complete: {len(FINAL_FEATURES_USED)} features remaining ---")
+    logger.info(f"Final features selected by automated process: {FINAL_FEATURES_USED}")
+
     # Log the selected features if needed (can be long)
     # logger.debug(f"Selected features: {FINAL_FEATURES_USED}")
 else:
@@ -677,6 +706,8 @@ else:
     X_train = X_train_pre_fs.copy()
     X_test = X_test_pre_fs.copy()
     FINAL_FEATURES_USED = FEATURES_BEFORE_AUTOFS # This list contains all manually selected features
+    logger.info(f"Using {len(FINAL_FEATURES_USED)} features selected manually (automated selection skipped): {FINAL_FEATURES_USED}")
+
 
 # Log final shapes and NaN counts going into the model pipeline
 logger.info(f"Final data shapes for modeling: X_train={X_train.shape}, X_test={X_test.shape}")
@@ -781,6 +812,7 @@ all_test_predictions = [] # List to store predictions from each averaging run
 # --- Averaging Loop ---
 if PERFORM_AVERAGING:
     logger.info(f"--- Starting Model Training: Averaging {N_AVERAGING_RUNS} {MODEL_TYPE} runs ---")
+    trained_models = []
 
     for i in range(N_AVERAGING_RUNS):
         current_run_seed = BASE_RANDOM_STATE + i
@@ -799,6 +831,14 @@ if PERFORM_AVERAGING:
             current_pipeline.fit(X_train, y_train) # Fit on final X_train
             end_time = datetime.datetime.now()
             logger.info(f"  Training complete. Time: {end_time - start_time}")
+            model_filename = f"{MODELS_DIR}/model_avg_run_{i+1}_seed_{current_run_seed}.joblib"
+            try:
+                joblib.dump(current_pipeline, model_filename)
+                logger.info(f"  Saved trained model for run {i+1} to: {model_filename}")
+                trained_models.append(model_filename) # Optional: keep track of saved models
+            except Exception as e_save:
+                logger.error(f"  ERROR saving model for run {i+1}: {e_save}", exc_info=True)
+ 
         except Exception as e:
             logger.error(f"  ERROR during training run {i+1} (Seed: {current_run_seed}): {e}", exc_info=True)
             logger.warning(f"  Skipping prediction storage for run {i+1} due to training error.")

@@ -492,3 +492,275 @@
 2025-04-19 17:24:45 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-04-19_13-29-49 - INFO - Generating submission file...
 2025-04-19 17:24:45 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-04-19_13-29-49 - INFO - Submission file saved to './submission_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-04-19_13-29-49.csv'
 2025-04-19 17:24:45 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-04-19_13-29-49 - INFO - --- Finished Run: AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-04-19_13-29-49 ---
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 ---
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Goal: Predicting Functional Outcome (Benzel Score)
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Model: AutoTabPFN
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Averaging: True (Runs: 5)
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Cross-Validation: False
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - AutoTabPFN Base Params: {'device': 'cuda', 'max_time': 3600}
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Manual Feature Selection: Metadata=True, Week1=True, FE_Wk1=True, TargetTime=True, FutureMotor=True
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Automated Feature Selection: True (VarThresh=0.01, CorrThresh=0.93, K=75)
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   External Preds File (Test): ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13.csv
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   External Outcomes File (Train): ./train_outcomes_MS.csv
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Data Directory: ./
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Submission File: ./submission_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02.csv
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - TabPFN Device: cuda
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Loading base data files...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness via data dictionary.
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Base data loaded successfully.
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Loading external future motor score data (predicted for test, actual/OOF for train)...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Loaded test set predictions from: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13.csv (Shape: (122, 22))
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Loaded train set actuals/OOF from: ./train_outcomes_MS.csv (Shape: (544, 22))
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Identifying initial feature groups...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Identified 13 potential metadata columns.
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Identified 135 common Week 1 ISNCSCI columns.
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Merging metadata and common Week 1 features for training set...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Training data shape after initial merge: (675, 149)
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Performing Feature Engineering (from Week 1 data)...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Shape after Week 1 FE: (675, 171)
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Identified 22 Week 1 engineered features.
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Performing Feature Engineering (from Future Motor Scores - Train Actuals/OOF)...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Generated 6 features from future motor scores (suffix: _FutureMotor).
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Identified 6 future motor engineered features.
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Merging future motor features into training data...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Training data shape after merging future motor features: (675, 177)
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - WARNING -   Found 786 NaNs in future motor features after merging to train data (check PID alignment).
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Selecting initial feature set based on manual configuration flags...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Manually selected 176 base features (before adding target_time/autoFS).
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Merging functional outcomes and finalizing training data (pre-autoFS)...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Dropped 0 rows with missing target values.
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Including 'target_time' in initial feature set.
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Training data shape before autoFS: (582, 177)
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Preparing test data (pre-autoFS)...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Shape after Week 1 FE: (122, 171)
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Performing Feature Engineering (from Future Motor Scores - Test Predictions)...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Generated 6 features from future motor scores (suffix: _FutureMotor).
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Merging predicted future motor features into test data...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Selecting 176 manually selected base features for test set...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Aligning columns between train and test sets (pre-autoFS)...
+2025-05-02 17:04:02 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Test data shape before autoFS: (118, 177)
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - --- Running Automated Feature Selection ---
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Starting automated feature selection on 177 candidate features...
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Identified 173 numeric and 4 non-numeric features.
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Applying Variance Threshold (threshold=0.01)...
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Variance Threshold kept 173 numeric features.
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Applying Correlation Threshold (threshold=0.93)...
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Correlation Threshold kept 166 numeric features.
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Applying Univariate Selection (f_regression, k=75)...
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Univariate Selection kept 75 numeric features.
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Automated Feature Selection complete. Selected 79 total features. Time: 0:00:00.072679
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - --- Feature Selection Complete: 79 features remaining ---
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Final data shapes for modeling: X_train=(582, 79), X_test=(118, 79)
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - WARNING - Final X_train contains 2682 NaNs (will be passed to model).
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - WARNING - Final X_test contains 101 NaNs (will be passed to model).
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Setting up preprocessing pipeline for 79 selected features...
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Encoding 3 Categorical Features: ['age_category', 'bmi_category', 'tx1_r']
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Encoding 1 Ordinal Features: ['ais1']
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Passing through 75 Numerical Features.
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Preprocessing column assignment verification successful.
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - Defining base AutoTabPFN model pipeline...
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - --- Starting Model Training: Averaging 5 AutoTabPFN runs ---
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO - --- Averaging Run 1/5 (Seed: 42) ---
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Cloned pipeline and set regressor random_state to 42
+2025-05-02 17:04:03 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-04-02 - INFO -   Training model... (Max time: 3600s)
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 ---
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Goal: Predicting Functional Outcome (Benzel Score)
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Model: AutoTabPFN
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Averaging: True (Runs: 5)
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Cross-Validation: False
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - AutoTabPFN Base Params: {'device': 'cuda', 'max_time': 3600}
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Manual Feature Selection: Metadata=True, Week1=True, FE_Wk1=True, TargetTime=True, FutureMotor=True
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Automated Feature Selection: True (VarThresh=0.01, CorrThresh=0.93, K=75)
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   External Preds File (Test): ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13.csv
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   External Outcomes File (Train): ./train_outcomes_MS.csv
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Data Directory: ./
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Submission File: ./submission_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46.csv
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - TabPFN Device: cuda
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Loading base data files...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness via data dictionary.
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Base data loaded successfully.
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Loading external future motor score data (predicted for test, actual/OOF for train)...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Loaded test set predictions from: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13.csv (Shape: (122, 22))
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Loaded train set actuals/OOF from: ./train_outcomes_MS.csv (Shape: (544, 22))
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Identifying initial feature groups...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Identified 13 potential metadata columns.
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Identified 135 common Week 1 ISNCSCI columns.
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Merging metadata and common Week 1 features for training set...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Training data shape after initial merge: (675, 149)
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Performing Feature Engineering (from Week 1 data)...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Shape after Week 1 FE: (675, 171)
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Identified 22 Week 1 engineered features.
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Performing Feature Engineering (from Future Motor Scores - Train Actuals/OOF)...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Generated 6 features from future motor scores (suffix: _FutureMotor).
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Identified 6 future motor engineered features.
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Merging future motor features into training data...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Training data shape after merging future motor features: (675, 177)
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - WARNING -   Found 786 NaNs in future motor features after merging to train data (check PID alignment).
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Selecting initial feature set based on manual configuration flags...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Manually selected 176 base features (before adding target_time/autoFS).
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Merging functional outcomes and finalizing training data (pre-autoFS)...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Dropped 0 rows with missing target values.
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Including 'target_time' in initial feature set.
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Training data shape before autoFS: (582, 177)
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Preparing test data (pre-autoFS)...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Shape after Week 1 FE: (122, 171)
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Performing Feature Engineering (from Future Motor Scores - Test Predictions)...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Generated 6 features from future motor scores (suffix: _FutureMotor).
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Merging predicted future motor features into test data...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Selecting 176 manually selected base features for test set...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Aligning columns between train and test sets (pre-autoFS)...
+2025-05-02 17:17:46 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Test data shape before autoFS: (118, 177)
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - --- Running Automated Feature Selection ---
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Starting automated feature selection on 177 candidate features...
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Identified 173 numeric and 4 non-numeric features.
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Applying Variance Threshold (threshold=0.01)...
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Variance Threshold kept 173 numeric features.
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Applying Correlation Threshold (threshold=0.93)...
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Correlation Threshold kept 166 numeric features.
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Applying Univariate Selection (f_regression, k=75)...
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Univariate Selection kept 75 numeric features.
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Automated Feature Selection complete. Selected 79 total features. Time: 0:00:00.070439
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - --- Feature Selection Complete: 79 features remaining ---
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Final features selected by automated process: ['FE_LEMS_Wk1', 'FE_LTSMean_Wk1', 'FE_LTSStd_Wk1', 'FE_LTS_L_Wk1', 'FE_LTS_R_Wk1', 'FE_MotorSymmAbsDiff_Wk1', 'FM_LEMS_FutureMotor', 'FM_MotorL_FutureMotor', 'FM_MotorR_FutureMotor', 'FM_MotorSymmAbsDiff_FutureMotor', 'age_category', 'ais1', 'ankdol01', 'ankdor01', 'ankpll01', 'ankplr01', 'anyana01', 'bmi_category', 'gretol01', 'hipfll01', 'hipflr01', 'kneetr01', 'kneexl01', 'l1ltl01', 'l1ltr01', 'l1ppl01', 'l1ppr01', 'l2ltl01', 'l2ltr01', 'l2ppl01', 'l2ppr01', 'l3ltl01', 'l3ltr01', 'l3ppl01', 'l3ppr01', 'l4ltl01', 'l4ltr01', 'l4ppl01', 'l4ppr01', 'l5ltl01', 'l5ltr01', 'l5ppl01', 'l5ppr01', 's1ltl01', 's1ltr01', 's1ppl01', 's1ppr01', 's2ltl01', 's2ltr01', 's2ppl01', 's2ppr01', 's3ltl01', 's3ltr01', 's3ppl01', 's3ppr01', 's45ltl01', 's45ltr01', 's45ppl01', 's45ppr01', 't10ltl01', 't10ltr01', 't10ppl01', 't10ppr01', 't11ltl01', 't11ltr01', 't11ppl01', 't11ppr01', 't12ltl01', 't12ltr01', 't12ppl01', 't12ppr01', 't7ltr01', 't8ltl01', 't8ltr01', 't9ltr01', 't9ppl01', 't9ppr01', 'tx1_r', 'vaccd01']
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Final data shapes for modeling: X_train=(582, 79), X_test=(118, 79)
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - WARNING - Final X_train contains 2682 NaNs (will be passed to model).
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - WARNING - Final X_test contains 101 NaNs (will be passed to model).
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Setting up preprocessing pipeline for 79 selected features...
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Encoding 3 Categorical Features: ['age_category', 'bmi_category', 'tx1_r']
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Encoding 1 Ordinal Features: ['ais1']
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Passing through 75 Numerical Features.
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Preprocessing column assignment verification successful.
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - Defining base AutoTabPFN model pipeline...
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - --- Starting Model Training: Averaging 5 AutoTabPFN runs ---
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - --- Averaging Run 1/5 (Seed: 42) ---
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Cloned pipeline and set regressor random_state to 42
+2025-05-02 17:17:47 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Training model... (Max time: 3600s)
+2025-05-02 18:02:35 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Training complete. Time: 0:44:48.053653
+2025-05-02 18:02:35 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - ERROR -   ERROR saving model for run 1: [Errno 2] No such file or directory: './trained_models_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46/model_avg_run_1_seed_42.joblib'
+Traceback (most recent call last):
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/TabPFN_Fun.py", line 811, in <module>
+    joblib.dump(current_pipeline, model_filename)
+  File "/scai_data3/scratch/stirnimann_r/KaggleChallenge/.venv/lib64/python3.9/site-packages/joblib/numpy_pickle.py", line 552, in dump
+    with open(filename, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './trained_models_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46/model_avg_run_1_seed_42.joblib'
+2025-05-02 18:02:35 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Making predictions for run 1...
+2025-05-02 18:05:27 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Predictions stored.
+2025-05-02 18:05:27 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO - --- Averaging Run 2/5 (Seed: 43) ---
+2025-05-02 18:05:27 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Cloned pipeline and set regressor random_state to 43
+2025-05-02 18:05:27 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_17-17-46 - INFO -   Training model... (Max time: 3600s)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - --- Starting Run: AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 ---
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Goal: Predicting Functional Outcome (Benzel Score)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Model: AutoTabPFN
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Averaging: True (Runs: 5)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Cross-Validation: False
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - AutoTabPFN Base Params: {'device': 'cuda', 'max_time': 3600}
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Manual Feature Selection: Metadata=True, Week1=True, FE_Wk1=True, TargetTime=True, FutureMotor=True
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Automated Feature Selection: True (VarThresh=0.01, CorrThresh=0.93, K=75)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   External Preds File (Test): ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13.csv
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   External Outcomes File (Train): ./train_outcomes_MS.csv
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Data Directory: ./
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Submission File: ./submission_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38.csv
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - TabPFN Device: cuda
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Created/verified models directory: ./trained_models_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Loading base data files...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - WARNING - Replacing value 9 with NaN globally. Verify appropriateness via data dictionary.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Base data loaded successfully.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Loading external future motor score data (predicted for test, actual/OOF for train)...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Loaded test set predictions from: ./submission_TabPFN_MultiOutput_v6_FE_native_nan_Avg5_NoCV_2025-04-17_21-38-13.csv (Shape: (122, 22))
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Loaded train set actuals/OOF from: ./train_outcomes_MS.csv (Shape: (544, 22))
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Identifying initial feature groups...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Identified 13 potential metadata columns.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Identified 135 common Week 1 ISNCSCI columns.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Merging metadata and common Week 1 features for training set...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training data shape after initial merge: (675, 149)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Performing Feature Engineering (from Week 1 data)...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Shape after Week 1 FE: (675, 171)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Identified 22 Week 1 engineered features.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Performing Feature Engineering (from Future Motor Scores - Train Actuals/OOF)...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Generated 6 features from future motor scores (suffix: _FutureMotor).
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Identified 6 future motor engineered features.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Merging future motor features into training data...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training data shape after merging future motor features: (675, 177)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - WARNING -   Found 786 NaNs in future motor features after merging to train data (check PID alignment).
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Selecting initial feature set based on manual configuration flags...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Manually selected 176 base features (before adding target_time/autoFS).
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Merging functional outcomes and finalizing training data (pre-autoFS)...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Dropped 0 rows with missing target values.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Including 'target_time' in initial feature set.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training data shape before autoFS: (582, 177)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Preparing test data (pre-autoFS)...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Shape after Week 1 FE: (122, 171)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Performing Feature Engineering (from Future Motor Scores - Test Predictions)...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Generated 6 features from future motor scores (suffix: _FutureMotor).
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Merging predicted future motor features into test data...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Selecting 176 manually selected base features for test set...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Aligning columns between train and test sets (pre-autoFS)...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Test data shape before autoFS: (118, 177)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - --- Running Automated Feature Selection ---
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Starting automated feature selection on 177 candidate features...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Identified 173 numeric and 4 non-numeric features.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Applying Variance Threshold (threshold=0.01)...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Variance Threshold kept 173 numeric features.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Applying Correlation Threshold (threshold=0.93)...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Correlation Threshold kept 166 numeric features.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Applying Univariate Selection (f_regression, k=75)...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Univariate Selection kept 75 numeric features.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Automated Feature Selection complete. Selected 79 total features. Time: 0:00:00.071327
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - --- Feature Selection Complete: 79 features remaining ---
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Final features selected by automated process: ['FE_LEMS_Wk1', 'FE_LTSMean_Wk1', 'FE_LTSStd_Wk1', 'FE_LTS_L_Wk1', 'FE_LTS_R_Wk1', 'FE_MotorSymmAbsDiff_Wk1', 'FM_LEMS_FutureMotor', 'FM_MotorL_FutureMotor', 'FM_MotorR_FutureMotor', 'FM_MotorSymmAbsDiff_FutureMotor', 'age_category', 'ais1', 'ankdol01', 'ankdor01', 'ankpll01', 'ankplr01', 'anyana01', 'bmi_category', 'gretol01', 'hipfll01', 'hipflr01', 'kneetr01', 'kneexl01', 'l1ltl01', 'l1ltr01', 'l1ppl01', 'l1ppr01', 'l2ltl01', 'l2ltr01', 'l2ppl01', 'l2ppr01', 'l3ltl01', 'l3ltr01', 'l3ppl01', 'l3ppr01', 'l4ltl01', 'l4ltr01', 'l4ppl01', 'l4ppr01', 'l5ltl01', 'l5ltr01', 'l5ppl01', 'l5ppr01', 's1ltl01', 's1ltr01', 's1ppl01', 's1ppr01', 's2ltl01', 's2ltr01', 's2ppl01', 's2ppr01', 's3ltl01', 's3ltr01', 's3ppl01', 's3ppr01', 's45ltl01', 's45ltr01', 's45ppl01', 's45ppr01', 't10ltl01', 't10ltr01', 't10ppl01', 't10ppr01', 't11ltl01', 't11ltr01', 't11ppl01', 't11ppr01', 't12ltl01', 't12ltr01', 't12ppl01', 't12ppr01', 't7ltr01', 't8ltl01', 't8ltr01', 't9ltr01', 't9ppl01', 't9ppr01', 'tx1_r', 'vaccd01']
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Final data shapes for modeling: X_train=(582, 79), X_test=(118, 79)
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - WARNING - Final X_train contains 2682 NaNs (will be passed to model).
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - WARNING - Final X_test contains 101 NaNs (will be passed to model).
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Setting up preprocessing pipeline for 79 selected features...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Encoding 3 Categorical Features: ['age_category', 'bmi_category', 'tx1_r']
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Encoding 1 Ordinal Features: ['ais1']
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Passing through 75 Numerical Features.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Preprocessing column assignment verification successful.
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Defining base AutoTabPFN model pipeline...
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - --- Starting Model Training: Averaging 5 AutoTabPFN runs ---
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - --- Averaging Run 1/5 (Seed: 42) ---
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Cloned pipeline and set regressor random_state to 42
+2025-05-02 18:07:38 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training model... (Max time: 3600s)
+2025-05-02 18:48:44 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training complete. Time: 0:41:05.789801
+2025-05-02 18:48:59 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Saved trained model for run 1 to: ./trained_models_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38/model_avg_run_1_seed_42.joblib
+2025-05-02 18:48:59 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Making predictions for run 1...
+2025-05-02 18:51:53 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Predictions stored.
+2025-05-02 18:51:54 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - --- Averaging Run 2/5 (Seed: 43) ---
+2025-05-02 18:51:54 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Cloned pipeline and set regressor random_state to 43
+2025-05-02 18:51:54 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training model... (Max time: 3600s)
+2025-05-02 19:50:25 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training complete. Time: 0:58:31.014298
+2025-05-02 19:50:40 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Saved trained model for run 2 to: ./trained_models_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38/model_avg_run_2_seed_43.joblib
+2025-05-02 19:50:40 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Making predictions for run 2...
+2025-05-02 19:52:11 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Predictions stored.
+2025-05-02 19:52:12 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - --- Averaging Run 3/5 (Seed: 44) ---
+2025-05-02 19:52:12 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Cloned pipeline and set regressor random_state to 44
+2025-05-02 19:52:12 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training model... (Max time: 3600s)
+2025-05-02 20:41:05 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training complete. Time: 0:48:53.049060
+2025-05-02 20:41:19 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Saved trained model for run 3 to: ./trained_models_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38/model_avg_run_3_seed_44.joblib
+2025-05-02 20:41:19 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Making predictions for run 3...
+2025-05-02 20:44:15 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Predictions stored.
+2025-05-02 20:44:15 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - --- Averaging Run 4/5 (Seed: 45) ---
+2025-05-02 20:44:15 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Cloned pipeline and set regressor random_state to 45
+2025-05-02 20:44:15 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training model... (Max time: 3600s)
+2025-05-02 21:35:57 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training complete. Time: 0:51:42.084115
+2025-05-02 21:36:13 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Saved trained model for run 4 to: ./trained_models_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38/model_avg_run_4_seed_45.joblib
+2025-05-02 21:36:13 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Making predictions for run 4...
+2025-05-02 21:39:16 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Predictions stored.
+2025-05-02 21:39:16 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - --- Averaging Run 5/5 (Seed: 46) ---
+2025-05-02 21:39:16 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Cloned pipeline and set regressor random_state to 46
+2025-05-02 21:39:16 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training model... (Max time: 3600s)
+2025-05-02 22:37:45 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Training complete. Time: 0:58:29.344057
+2025-05-02 22:37:59 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Saved trained model for run 5 to: ./trained_models_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38/model_avg_run_5_seed_46.joblib
+2025-05-02 22:37:59 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Making predictions for run 5...
+2025-05-02 22:43:23 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Predictions stored.
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Averaging predictions across 5 successful runs...
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Averaging complete.
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Post-processing final predictions...
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Actual target range observed in training data: [1, 9]
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - WARNING -   Actual training range [1, 9] exceeds expected range [1, 8].
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Clipping predictions to range [1, 8].
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO -   Rounding predictions to nearest integer.
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Post-processing complete.
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Generating submission file...
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - Submission file successfully saved to './submission_AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38.csv'
+2025-05-02 22:43:24 - AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 - INFO - --- Finished Run: AutoTabPFN_SingleOutput_v6_FuncPred_M1_W1_F1_T1_E1_AutoFS1_Avg5_NoCV_2025-05-02_18-07-38 ---
