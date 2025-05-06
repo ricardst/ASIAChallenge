@@ -1,0 +1,15 @@
+{
+  "RAW_DATA_DIR": "./Input_Files/",
+  "CLEAN_DATA_DIR": "./Clean_Data/",
+  "TRAIN_DATA_CLEAN_PATH": "./Clean_Data/X_train_processed.joblib",
+  "TEST_DATA_CLEAN_PATH": "./Clean_Data/X_test_processed.joblib",
+  "MODEL_DIR": "./Models/",
+  "CHECKPOINT_DIR": "./Checkpoints/",
+  "SUBMISSION_DIR": "./Submissions/",
+  "LOG_DIR": "./Log_Files/",
+  "PLOTS_DIR": "./Plots/",
+  "SKIP_PLOTS": true,
+  "REDUCE_FEATURES_FOR_SHAP_PLOTS": false,
+  "SHAP_TOP_N_FEATURES": 40,
+  "SHAP_EXPLAIN_SAMPLE_SIZE": 50
+}

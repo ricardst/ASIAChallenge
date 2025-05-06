@@ -103,3 +103,4 @@ wcwidth==0.2.13
 widgetsnbextension==4.0.13
 xgboost==2.1.4
 zipp==3.21.0
+shap

@@ -815,6 +815,40 @@ base_pipeline = Pipeline(steps=[
     ('regressor', base_autotabpfn_estimator)
 ])
 
+# --- Save Preprocessed Data ---
+logger.info("Preprocessing and saving data input to the model...")
+try:
+    # Fit the preprocessor (defined above) on X_train and transform both X_train and X_test.
+    # This ensures the preprocessor is fitted correctly before transforming X_test.
+    # The 'preprocessor' object here is the same one that will be used in the pipeline.
+    logger.info(f"Fitting preprocessor and transforming X_train (shape: {X_train.shape})...")
+    X_train_processed = preprocessor.fit_transform(X_train, y_train)
+    logger.info(f"Transforming X_test (shape: {X_test.shape})...")
+    X_test_processed = preprocessor.transform(X_test)
+
+    # Save the processed dataframes
+    X_train_processed_filename = os.path.join(MODELS_DIR, 'X_train_processed.joblib')
+    X_test_processed_filename = os.path.join(MODELS_DIR, 'X_test_processed.joblib')
+
+    joblib.dump(X_train_processed, X_train_processed_filename)
+    logger.info(f"Saved preprocessed training data to: {X_train_processed_filename} (Shape: {X_train_processed.shape})")
+    joblib.dump(X_test_processed, X_test_processed_filename)
+    logger.info(f"Saved preprocessed test data to: {X_test_processed_filename} (Shape: {X_test_processed.shape})")
+
+    # Save the column names from the processed data, as they might change (e.g., after one-hot encoding)
+    # This is useful if you load the regressor part of the model separately later.
+    if hasattr(X_train_processed, 'columns'):
+        processed_feature_names = X_train_processed.columns.tolist()
+        processed_features_filename = os.path.join(MODELS_DIR, 'processed_feature_names.joblib')
+        joblib.dump(processed_feature_names, processed_features_filename)
+        logger.info(f"Saved {len(processed_feature_names)} processed feature names to: {processed_features_filename}")
+    else:
+        logger.warning("Preprocessed X_train is not a DataFrame. Cannot save processed feature names.")
+
+except Exception as e_preprocess_save:
+    logger.error(f"ERROR saving preprocessed data: {e_preprocess_save}", exc_info=True)
+    # Decide if this is critical. For now, just log and continue.
+
 # ==============================================================================
 # Model Training and Prediction
 # ==============================================================================
