@@ -76,6 +76,17 @@ The typical workflow is to run the scripts in the following order:
 
     *Note: Ensure that the configuration flags (e.g., `USE_FUTURE_MOTOR_FEATURES`, `SELECT_*` flags in `prepare_data.py`, and model/averaging settings in `train.py` and `predict.py`) are consistent across the data preparation, training, and prediction stages if you are running them separately or modifying configurations.*
 
+4.  **Generate Submission on a CPU (if no GPU is available):**
+    If you are working on a machine without a CUDA-enabled GPU, you can use `predict_cpu.py`. This script is a modified version of `predict.py` that attempts to load and run the models on the CPU.
+    ```bash
+    python predict_cpu.py
+    ```
+    Output:
+    *   Log file in `Log_Files/` (e.g., `predict_model_cpu_[timestamp].log`).
+    *   Submission CSV in `Submissions/` (e.g., `submission_[timestamp].csv`).
+
+    *Note: Performance will be significantly slower compared to running on a GPU. The same consistency notes for configuration flags apply here as well.*
+
 ## Summary
 Our winning solution predicts the modified Benzel functional score (target modben) 6-12 months post-spinal cord injury using patient data available within the first week, along with metadata. The core modeling technique is the AutoTabPFNRegressor from the tabpfn_extensions library, which leverages the TabPFN model optimized for tabular data [1]. To enhance robustness, predictions from 5 independent training runs (using different random seeds) of the AutoTabPFNRegressor pipeline were averaged. Key input features included patient metadata (age, sex, BMI category), select week 1 clinical assessments (AIS grade, motor/sensory scores), the target prediction time (26 vs 52 weeks), and extensively engineered features derived from both week 1 scores and external data representing future motor scores (predicted for test, actual for train). The model was developed in Python using scikit-learn for preprocessing/pipelines and tabpfn / torch for the regressor. Each of the 5 training runs was allocated a time budget of 3600 seconds (1 hour), leading to a total training time of approximately 5 hours plus overhead on a CUDA-enabled GPU.
 
