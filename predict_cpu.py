@@ -94,10 +94,14 @@ def main():
 
     original_autotabpfn_setstate = None
     patch_applied_for_autotabpfn = False
+    original_torch_load = None  # For torch.load patch
+    patch_applied_for_torch_load = False # For torch.load patch
 
     # Attempt to patch AutoTabPFNRegressor for CPU loading if CUDA is not available
     if not torch.cuda.is_available():
-        logger.info("CUDA not available. Attempting to patch AutoTabPFNRegressor for CPU loading.")
+        logger.info("CUDA not available. Applying patches for CPU loading.")
+        
+        # Patch 1: AutoTabPFNRegressor.__setstate__ (existing patch)
         try:
             # This line checks if AutoTabPFNRegressor is defined and accessible
             _ = AutoTabPFNRegressor
@@ -122,13 +126,47 @@ def main():
             logger.info("AutoTabPFNRegressor.__setstate__ has been patched for CPU loading.")
         
         except NameError:
-            logger.error("AutoTabPFNRegressor is not defined in the global scope. Cannot apply patch. "
-                         "Please ensure 'from tabpfn_extensions.post_hoc_ensembles.sklearn_interface import AutoTabPFNRegressor' "
-                         "is present and working.")
-        except Exception as e_patch:
-            logger.error(f"An unexpected error occurred during patching: {e_patch}", exc_info=True)
+            logger.error("AutoTabPFNRegressor is not defined in the global scope. Cannot apply __setstate__ patch. "
+                         "Ensure 'from tabpfn_extensions.post_hoc_ensembles.sklearn_interface import AutoTabPFNRegressor' "
+                         "is present and working if this class is part of the pickled model.")
+        except Exception as e_patch_setstate:
+            logger.error(f"An unexpected error occurred during AutoTabPFNRegressor.__setstate__ patching: {e_patch_setstate}", exc_info=True)
+
+        # Patch 2: torch.load
+        try:
+            logger.info("Attempting to patch torch.load for CPU-only environment.")
+            original_torch_load = torch.load
+
+            def patched_torch_load_on_cpu(*args, **kwargs):
+                logger.debug(f"Patched torch.load_on_cpu invoked. Original args: {args}, kwargs: {kwargs}")
+                
+                forced_map_location = torch.device('cpu')
+                
+                if 'map_location' in kwargs:
+                    original_map_loc = kwargs['map_location']
+                    kwargs['map_location'] = forced_map_location
+                    logger.info(f"Patched torch.load: Overriding kwarg 'map_location' from '{original_map_loc}' to '{forced_map_location}'.")
+                elif len(args) > 1: # Assuming map_location is the second positional argument
+                    original_map_loc = args[1]
+                    new_args = list(args)
+                    new_args[1] = forced_map_location
+                    args = tuple(new_args)
+                    logger.info(f"Patched torch.load: Overriding positional arg map_location from '{original_map_loc}' to '{forced_map_location}'.")
+                else: # map_location not provided, add it
+                    kwargs['map_location'] = forced_map_location
+                    logger.info(f"Patched torch.load: Adding 'map_location={forced_map_location}' as it was not specified.")
+                    
+                return original_torch_load(*args, **kwargs)
+
+            torch.load = patched_torch_load_on_cpu
+            patch_applied_for_torch_load = True
+            logger.info("torch.load has been globally patched to use map_location='cpu'.")
+        
+        except Exception as e_patch_torch_load:
+            logger.error(f"An unexpected error occurred during torch.load patching: {e_patch_torch_load}", exc_info=True)
+            # If torch.load patching fails, subsequent joblib.load might still fail on CUDA models.
     else:
-        logger.info("CUDA is available. No patch needed for AutoTabPFNRegressor.")
+        logger.info("CUDA is available. No patch needed for AutoTabPFNRegressor or torch.load.")
 
     logger.info("Loading preprocessed test data and PIDs...")
     try:
@@ -278,8 +316,16 @@ def main():
             logger.info("Restored original AutoTabPFNRegressor.__setstate__.")
         except NameError:
             logger.error("AutoTabPFNRegressor is not defined. Could not restore original __setstate__.")
-        except Exception as e_restore:
-            logger.error(f"An unexpected error occurred during __setstate__ restoration: {e_restore}", exc_info=True)
+        except Exception as e_restore_setstate: # Renamed variable to avoid conflict
+            logger.error(f"An unexpected error occurred during __setstate__ restoration: {e_restore_setstate}", exc_info=True)
+
+    # Restore original torch.load if it was patched
+    if patch_applied_for_torch_load and original_torch_load is not None:
+        try:
+            torch.load = original_torch_load
+            logger.info("Restored original torch.load.")
+        except Exception as e_restore_torch_load:
+            logger.error(f"An unexpected error occurred during torch.load restoration: {e_restore_torch_load}", exc_info=True)
 
     logger.info(f"--- Model Prediction (CPU-Patched) Finished: {run_id} ---")
 
