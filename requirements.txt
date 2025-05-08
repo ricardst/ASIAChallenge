@@ -87,7 +87,7 @@ slicer==0.0.8
 stack-data==0.6.3
 sympy==1.13.1
 tabpfn==2.0.8
--e git+https://github.com/PriorLabs/tabpfn-extensions@d44606e35f89e18b6bc4c4a2eef2f46918c4302e#egg=tabpfn_extensions
+-e git+https://github.com/PriorLabs/tabpfn-extensions.git
 threadpoolctl==3.6.0
 torch==2.6.0
 torchaudio==2.6.0
